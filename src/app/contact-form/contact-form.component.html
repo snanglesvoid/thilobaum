@@ -1,0 +1,87 @@
+<p scrollFx class="fade-in">
+  Whether you want to place your request, exclusively customize your BA1 or
+  you’re just very curious about a technical detail – I‘m looking forward to
+  hearing from you.
+</p>
+<div class="signature text-right">
+  <h3>
+    <span style="color: lightcoral">Signature image missing -></span>Thilo Baum
+  </h3>
+</div>
+<form id="contact-form" autocomplete="off" (submit)="submit($event)">
+  <input
+    type="text"
+    name="hidden"
+    style="display: none;"
+    autocomplete="false"
+  />
+
+  <app-input-label>
+    <input
+      #input
+      type="text"
+      [name]="'firstname' + idSuffix"
+      [id]="'firstname-input' + idSuffix"
+      autocomplete="nope"
+      spellcheck="false"
+      autocorrect="off"
+      placeholder="First Name*"
+    />
+  </app-input-label>
+  <app-input-label>
+    <input
+      #input
+      type="text"
+      [name]="'lastname' + idSuffix"
+      [id]="'lastname-input' + idSuffix"
+      autocomplete="nope"
+      spellcheck="false"
+      autocorrect="off"
+      placeholder="Last Name*"
+    />
+  </app-input-label>
+  <app-input-label>
+    <input
+      #input
+      type="text"
+      [name]="'email' + idSuffix"
+      [id]="'email-input' + idSuffix"
+      class="email"
+      autocomplete="nope"
+      spellcheck="false"
+      autocorrect="off"
+      placeholder="E-mail*"
+    />
+  </app-input-label>
+  <label for="message" id="message-label">
+    Message
+  </label>
+  <textarea
+    name="message"
+    id="message-input"
+    cols="30"
+    rows="10"
+    autocomplete="nope"
+    spellcheck="false"
+    autocorrect="off"
+  ></textarea>
+  <app-checkbox>
+    <input
+      #input
+      type="checkbox"
+      name="data-agree"
+      id="data-agree-input"
+      style="display:none;"
+      input
+    />
+    <label for="data-agree" label>
+      I understand that Thilo Baum will collect and use my personal data on the
+      basis of legal authorization and in accordance with the data protection
+      notices.
+    </label>
+  </app-checkbox>
+
+  <div class="text-right">
+    <button id="send-button" type="submit">send</button>
+  </div>
+</form>

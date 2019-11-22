@@ -1,0 +1,67 @@
+:host {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 1s ease;
+  width: 100%;
+}
+:host.visible {
+  max-height: 150vw;
+}
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  .images {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid white;
+  }
+  .data {
+    width: 70%;
+  }
+}
+
+.data-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  div {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    flex: 1 0 calc(50% - 1vw);
+    margin-right: 1vw;
+    border-bottom: 1px solid white;
+  }
+  span {
+    font-size: 2vw;
+  }
+}
+
+.text-right {
+  float: right;
+}
+
+.svg-pad {
+  display: grid;
+  grid-template-rows: 6vw 1fr;
+  grid-template-columns: 1fr 6vw 3vw;
+  grid-template-areas:
+    'horlabel empty'
+    'svg vertlabel';
+
+  .svg-component {
+    grid-area: svg;
+    text-align: center;
+  }
+
+  app-horizontal-label {
+    grid-area: horlabel;
+  }
+  app-vertical-label {
+    grid-area: vertlabel;
+  }
+}

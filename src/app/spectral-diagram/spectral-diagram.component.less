@@ -1,0 +1,18 @@
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  // animation: dash 5s ease-out infinite forwards;
+  transition: stroke-dashoffset 2s ease-out;
+}
+
+:host.in {
+  .path {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

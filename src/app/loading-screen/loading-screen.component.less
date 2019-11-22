@@ -1,0 +1,42 @@
+:host {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  z-index: 100;
+  text-align: center;
+  transition: opacity 1s 1s ease;
+}
+
+:host.complete {
+  opacity: 0;
+  pointer-events: none;
+}
+
+img {
+  height: 1rem;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+:host.complete img {
+  top: 0.8rem;
+  left: 1rem;
+  transform: translate(0, 0);
+}
+
+@keyframes blink {
+  0% {
+    filter: brightness(100%);
+  }
+  100% {
+    filter: brightness(20%);
+  }
+}

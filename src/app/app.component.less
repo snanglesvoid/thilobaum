@@ -1,0 +1,19 @@
+.shift-toggle {
+  transition: transform 0.6s ease;
+  display: flex;
+  cursor: pointer;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+.shifted {
+  transform: translateX(7.6vw);
+  animation: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
