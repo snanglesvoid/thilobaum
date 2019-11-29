@@ -1,3 +1,5 @@
+@import "../../styles/variables.less";
+
 :host {
   display: block;
   overflow: hidden;
@@ -17,6 +19,7 @@
     width: 30%;
     display: flex;
     flex-direction: column;
+    padding-top: 4vw;
     // border: 1px solid white;
   }
   .data {
@@ -48,10 +51,10 @@
 .svg-pad {
   display: grid;
   grid-template-rows: 6vw 1fr;
-  grid-template-columns: 1fr 6vw 3vw;
+  grid-template-columns: 1fr 7vw 2vw;
   grid-template-areas:
-    'horlabel empty'
-    'svg vertlabel';
+    "horlabel empty"
+    "svg vertlabel";
 
   .svg-component {
     grid-area: svg;
@@ -63,5 +66,79 @@
   }
   app-vertical-label {
     grid-area: vertlabel;
+  }
+}
+
+@media screen and (max-width: @size-md) {
+  :host {
+    background: #2c2e35;
+  }
+
+  :host.visible {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    max-height: 160rem;
+  }
+
+  .flex {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    padding-left: 0;
+
+    .data {
+      width: 100%;
+      padding-top: 1rem;
+    }
+
+    .images {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 50% 50%;
+      width: 100%;
+      padding-top: 0;
+
+      .speaker-top {
+        grid-row: 1;
+        grid-column: 2;
+      }
+      .speaker-side {
+        grid-row: 2;
+        grid-column: 1;
+      }
+      .speaker-front {
+        grid-row: 2;
+        grid-column: 2;
+      }
+    }
+  }
+
+  .svg-pad {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
+    grid-template-columns: 1fr 2rem 0;
+    padding: 0.5rem;
+  }
+
+  .data-row {
+    flex-direction: column;
+    div {
+      padding-top: 0;
+      padding-bottom: 0;
+      // flex: 1 0 calc(50% - 1vw);
+      margin-right: 0;
+    }
+    div:first-child {
+      border-bottom: none;
+      padding-top: 0.5rem;
+    }
+    div:last-child {
+      padding-bottom: 0.5rem;
+    }
+    span {
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import "../../styles/variables.less";
+
 :host {
   position: relative;
 }
@@ -14,6 +16,7 @@
   pointer-events: none;
   transform-origin: 0%;
   opacity: 0.7;
+  white-space: nowrap;
 }
 :host.focus .placeholder {
   color: white;
@@ -27,4 +30,14 @@
 :host.focus ::ng-deep input {
   border-color: white;
   color: white;
+}
+
+@media screen and (max-width: @size-md) {
+  .placeholder {
+    top: -0.7rem;
+    left: 0;
+    position: absolute;
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
 }

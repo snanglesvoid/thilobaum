@@ -1,3 +1,5 @@
+@import "../../styles/variables.less";
+
 :host {
   display: flex;
   flex-direction: row;
@@ -35,10 +37,34 @@
   cursor: default;
 }
 
-:host ::ng-deep input[type='checkbox']:checked ~ .checkbox-inner > .checkmark {
+:host ::ng-deep input[type="checkbox"]:checked ~ .checkbox-inner > .checkmark {
   color: rgba(255, 255, 255, 1);
 }
 
 .checkbox-inner:hover {
   border-color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: @size-md) {
+  :host {
+    margin-bottom: 1.4rem;
+  }
+
+  :host ::ng-deep label {
+    font-size: 1rem;
+  }
+
+  :host .checkbox-container {
+    width: 6rem;
+  }
+
+  :host .checkbox-inner {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  .checkmark {
+    font-size: 1.4rem;
+    line-height: 0.7rem;
+  }
 }

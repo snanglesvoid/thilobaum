@@ -1,3 +1,5 @@
+@import "../../styles/variables.less";
+
 :host {
   display: block;
   width: 100%;
@@ -7,12 +9,17 @@
 }
 
 span {
-  display: block;
+  // display: block;
   background: black;
   padding-top: 1vw;
   padding-bottom: 1vw;
   font-size: 2vw;
   width: 100%;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .line {
@@ -20,5 +27,14 @@ span {
   height: 100%;
   width: calc(50% - 1px);
   border-right: 1px solid white;
-  z-index: -1;
+  z-index: 1;
+}
+
+@media screen and (max-width: @size-md) {
+  span {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    background: #2c2e35;
+  }
 }

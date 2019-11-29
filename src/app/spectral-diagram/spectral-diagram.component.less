@@ -1,3 +1,15 @@
+@import "../../styles/variables.less";
+
+:host {
+  display: block;
+  margin-top: 2vw;
+}
+@media screen and (max-width: @size-md) {
+  :host {
+    margin-top: 1rem;
+  }
+}
+
 .path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;

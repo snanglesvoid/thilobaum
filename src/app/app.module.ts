@@ -14,7 +14,10 @@ import { DataSheetComponent } from './data-sheet/data-sheet.component';
 import { SpectralDiagramComponent } from './spectral-diagram/spectral-diagram.component';
 import { SpeakerSvgFrontalComponent } from './speaker-svg-frontal/speaker-svg-frontal.component';
 import { HorizontalLabelComponent } from './horizontal-label/horizontal-label.component';
-import { VerticalLabelComponent } from './vertical-label/vertical-label.component'
+import { VerticalLabelComponent } from './vertical-label/vertical-label.component';
+import { SpeakerSvgTopComponent } from './speaker-svg-top/speaker-svg-top.component';
+import { SpeakerSvgSideComponent } from './speaker-svg-side/speaker-svg-side.component';
+import { SectionDirective } from './section.directive'
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { VerticalLabelComponent } from './vertical-label/vertical-label.componen
     SpeakerSvgFrontalComponent,
     HorizontalLabelComponent,
     VerticalLabelComponent,
+    SpeakerSvgTopComponent,
+    SpeakerSvgSideComponent,
+    SectionDirective,
   ],
   imports: [BrowserModule],
   providers: [],

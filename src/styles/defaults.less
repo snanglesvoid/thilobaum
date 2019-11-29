@@ -1,3 +1,5 @@
+@import "./variables.less";
+
 html {
   scroll-behavior: smooth;
 }
@@ -5,12 +7,15 @@ html {
 body {
   background: black;
 
-  font-family: 'Graphik Light', sans-serif;
+  font-family: "Graphik Light", sans-serif;
   margin: 0px;
 }
 
 h1 {
-  font-family: 'Riviera Regular', sans-serif;
+  font-family: "Graphik Light", sans-serif;
+  strong {
+    font-family: "Riviera Regular", sans-serif;
+  }
   margin-top: 0;
 }
 
@@ -19,7 +24,7 @@ input,
 textarea,
 button,
 label {
-  font-family: 'Riviera Regular', sans-serif;
+  font-family: "Riviera Regular", sans-serif;
 }
 
 h1,
@@ -75,6 +80,18 @@ img {
   z-index: 1;
   pointer-events: none;
   margin-top: 8vw;
+  font-family: "Riviera Regular", sans-serif;
+
+  h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: @size-md) {
+  .section-title {
+    top: 3rem;
+  }
 }
 
 .background-fade-right {
@@ -121,6 +138,12 @@ img {
   /* border: 0.5px dotted white; */
 }
 
+@media screen and (max-width: @size-md) {
+  .spacer {
+    height: 2rem;
+  }
+}
+
 .height-1vp {
   height: 100vh;
 }
@@ -138,6 +161,14 @@ img {
 }
 .padding-right {
   padding-right: 10vw;
+}
+
+@media screen and (max-width: @size-md) {
+  .padding-left,
+  .padding-right {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .columns {
@@ -163,6 +194,13 @@ img.brand-logo {
   height: 10vw;
   width: auto;
   object-fit: contain;
+  cursor: pointer;
+}
+
+@media screen and (max-width: @size-md) {
+  img.brand-logo {
+    height: 6rem;
+  }
 }
 
 img.logo-wrap {
@@ -185,7 +223,7 @@ img.logo-wrap {
   border-radius: 50%;
   border: 1px solid white;
   box-sizing: border-box;
-  padding: 0.25vw;
+  padding: 4px;
   margin-right: 1vw;
   margin-top: 0.4vw;
   margin-left: 0.5vw;
@@ -195,5 +233,67 @@ img.logo-wrap {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: @size-md) {
+  .circle {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.7rem;
+    margin-top: 0.5rem;
+    margin-left: 0.3rem;
+  }
+}
+
+.hover-fx {
+  transition: filter 0.4s ease-out, transform 0.4s ease-out,
+    box-shadow 0.4s ease-out;
+  filter: brightness(0.7);
+  transform: scale(1) translateY(0);
+  // box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+}
+.hover-fx:hover {
+  filter: brightness(1);
+  transform: scale(1) translateY(-2px);
+  // box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: @size-md) {
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-weight: 100;
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
+  p,
+  span {
+    line-height: 1.5;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: @size-md) {
+  .columns {
+    display: block;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: @size-md) {
+  section {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: @size-md) {
+  .mobile-hide {
+    display: none !important;
   }
 }

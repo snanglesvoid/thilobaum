@@ -1,10 +1,12 @@
+@import "../../styles/variables.less";
+
 :host {
   display: block;
   position: relative;
 }
 
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
   width: 100%;
   background: transparent;
   border: none;
@@ -102,4 +104,43 @@ label {
 
 input.error {
   border-color: red;
+}
+
+@media screen and (max-width: @size-md) {
+  input[type="text"],
+  input[type="email"] {
+    line-height: 2rem;
+    height: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+    margin-top: 1.4rem !important;
+    margin-top: 0.7rem;
+  }
+
+  .placeholder {
+    line-height: 2rem;
+    font-size: 1.4rem;
+    margin-top: 1.4rem;
+  }
+
+  textarea {
+    height: 12rem;
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.7rem;
+    padding: 0.7rem;
+  }
+
+  label {
+    font-size: 1.4rem;
+    margin-top: 1.4rem;
+  }
+
+  #send-button {
+    font-size: 1.4rem;
+    line-height: 4vw;
+    height: 3rem;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+  }
 }

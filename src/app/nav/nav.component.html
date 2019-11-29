@@ -1,17 +1,29 @@
-<div class="logo">
+<div class="logo" [class.active]="sections.activeSection == 'intro'">
   <a href="#intro">
     <img src="assets/logo.JPG" />
   </a>
 </div>
 
 <ul class="navlinks">
-  <li>
-    <a href="#aesthetics">Aesthetics</a>
-    <span class="between">|</span>
-    <a href="#acoustics">Acoustics</a>
-    <span class="between">|</span>
-    <a href="#tailor-made">Tailor-Made</a>
-    <span class="between">|</span>
-    <a href="#contact">Contact</a>
+  <li [class.active]="sections.activeSection == 'aesthetics'">
+    <a (click)="toggleNav()" href="#aesthetics">Aesthetics</a>
+  </li>
+  <span class="between">|</span>
+  <li [class.active]="sections.activeSection == 'acoustics'">
+    <a (click)="toggleNav()" href="#acoustics">Acoustics</a>
+  </li>
+  <span class="between">|</span>
+  <li [class.active]="sections.activeSection == 'tailor-made'">
+    <a (click)="toggleNav()" href="#tailor-made">Tailor-Made</a>
+  </li>
+  <span class="between">|</span>
+  <li [class.active]="sections.activeSection == 'contact'">
+    <a (click)="toggleNav()" href="#contact">Contact</a>
   </li>
 </ul>
+
+<div class="nav-toggle" (click)="toggleNav()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
