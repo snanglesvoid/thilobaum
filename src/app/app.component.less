@@ -96,12 +96,11 @@
   }
 
   .sticky {
-    overflow: hidden;
     float: right;
     width: 50%;
     height: 100%;
     transition: opacity 1.5s ease;
-    z-index: -4;
+    z-index: -1;
 
     img {
       width: 130%;
@@ -109,10 +108,12 @@
       margin-left: -10%;
     }
   }
+  .sticky-placeholder {
+    height: 200vh;
+  }
 
   @media screen and (max-width: @size-md) {
     .sticky {
-      overflow: visible;
       top: 3rem;
       img {
         margin-top: 0;
@@ -131,7 +132,6 @@
       h3 {
         padding-top: 0;
         padding-right: 4rem;
-        z-index: 8;
       }
     }
   }
