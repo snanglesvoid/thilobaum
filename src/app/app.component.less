@@ -80,62 +80,103 @@
 }
 
 #aesthetics-1 {
-  .left {
+  .text-container {
     width: 50%;
     float: left;
     height: 200vh;
-
-    div {
-      height: 200vh;
-
-      h3 {
-        z-index: -1;
-        padding-top: 25vh;
-      }
-    }
+    padding-top: 25vh;
   }
-
   .sticky {
+    z-index: -1;
     float: right;
     width: 50%;
-    height: 100%;
-    transition: opacity 1.5s ease;
-    z-index: -1;
-
+    top: 3rem;
+    .img-container {
+      overflow: hidden;
+    }
     img {
       width: 130%;
       margin-top: -26%;
       margin-left: -10%;
     }
   }
+
   .sticky-placeholder {
     height: 200vh;
   }
+}
 
-  @media screen and (max-width: @size-md) {
-    .sticky {
-      top: 3rem;
-      img {
-        margin-top: 0;
-        width: 200%;
-        margin-left: -100%;
-      }
+@media screen and (max-width: @size-md) {
+  #aesthetics-1 {
+    .img-container {
+      width: 200%;
+      margin-left: -100%;
     }
-    .left {
-      .text-right {
-        text-align: left !important;
-      }
 
-      .relative {
-        width: 100vw;
-      }
-      h3 {
-        padding-top: 0;
-        padding-right: 4rem;
-      }
+    .left {
+      text-align: left !important;
+      width: calc(200% - 6rem);
     }
   }
 }
+
+// #aesthetics-1 {
+//   .left {
+//     width: 50%;
+//     float: left;
+//     height: 200vh;
+
+//     div {
+//       height: 200vh;
+
+//       h3 {
+//         z-index: -1;
+//         padding-top: 25vh;
+//       }
+//     }
+//   }
+
+//   .sticky {
+//     float: right;
+//     width: 50%;
+//     height: 100%;
+//     transition: opacity 1.5s ease;
+//     z-index: -1;
+
+//     img {
+//       width: 130%;
+//       margin-top: -26%;
+//       margin-left: -10%;
+//     }
+//   }
+//   .sticky-placeholder {
+//     height: 200vh;
+//   }
+
+//   @media screen and (max-width: @size-md) {
+//     .sticky {
+//       top: 3rem;
+//       img {
+//         margin-top: 0;
+//         width: 200%;
+//         margin-left: -100%;
+//       }
+//     }
+//     .left {
+//       .text-right {
+//         text-align: left !important;
+//       }
+
+//       .relative {
+//         width: 100vw;
+//       }
+//       h3 {
+//         padding-top: 0;
+//         padding-right: 4rem;
+//       }
+//     }
+//   }
+// }
 
 #aesthetics-2 {
   @media screen and (max-width: @size-md) {
