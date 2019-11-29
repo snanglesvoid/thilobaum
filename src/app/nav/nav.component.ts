@@ -7,7 +7,7 @@ import { SectionsService } from "../sections.service";
   styleUrls: ["./nav.component.less"]
 })
 export class NavComponent implements OnInit {
-  constructor(private sections: SectionsService) {}
+  constructor(public sections: SectionsService) {}
 
   ngOnInit() {}
 

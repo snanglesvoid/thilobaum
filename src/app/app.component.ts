@@ -95,4 +95,6 @@ export class AppComponent implements OnInit {
   }
 
   @ViewChildren(SectionDirective) sections: QueryList<SectionDirective>;
+
+  hideFoot = false;
 }
