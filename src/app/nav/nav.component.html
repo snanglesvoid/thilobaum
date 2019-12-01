@@ -1,23 +1,24 @@
 <div class="logo" [class.active]="sections.activeSection == 'intro'">
   <a href="#intro">
-    <img src="assets/logo.JPG" />
+    <img src="assets/logo.svg" />
   </a>
 </div>
 
 <ul class="navlinks">
   <li [class.active]="sections.activeSection == 'aesthetics'">
+    <span class="between">|</span>
     <a (click)="toggleNav()" href="#aesthetics">Aesthetics</a>
   </li>
-  <span class="between">|</span>
   <li [class.active]="sections.activeSection == 'acoustics'">
+    <span class="between">|</span>
     <a (click)="toggleNav()" href="#acoustics">Acoustics</a>
   </li>
-  <span class="between">|</span>
   <li [class.active]="sections.activeSection == 'tailor-made'">
+    <span class="between">|</span>
     <a (click)="toggleNav()" href="#tailor-made">Tailor-Made</a>
   </li>
-  <span class="between">|</span>
   <li [class.active]="sections.activeSection == 'contact'">
+    <span class="between">|</span>
     <a (click)="toggleNav()" href="#contact">Contact</a>
   </li>
 </ul>

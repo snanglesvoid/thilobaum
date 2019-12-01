@@ -9,7 +9,11 @@
   <section id="intro" section="intro">
     <div class="columns">
       <div class="left">
-        <img #image src="assets/KRU_S1A6539-be_1.jpg" />
+        <picture>
+          <source media="(min-width: 2048px)" srcset="assets/intro_4k.jpg">
+          <!-- <source media="(min-width: 1024px)" srcset="assets/intro_2k.jpg"> -->
+          <img #image src="assets/intro_2k.jpg" />
+        </picture>
       </div>
       <div class="right background-fade-right">
         <div class="text-left relative">
@@ -33,22 +37,7 @@
     <div class="section-title fade-in" scrollFx>
       <h1>Aesthetics</h1>
     </div>
-    <!-- <div id="aesthetics-1">
-      <div class="left">
-        <div class="relative">
-          <h3 class="text-right padding-left center">
-            “I have always dreamed of a speaker that blends sensual aesthetics
-            and revolutionary acoustic technology – but I simply couldn’t find
-            it. So I decided to design it myself.”<br />
-            — Thilo Baum
-          </h3>
-        </div>
-      </div>
-      <div class="sticky relative" [style.opacity]="hideFoot ? 0 : 1">
-        <img #image src="assets/KRU_S1A2233-be_1.jpg" />
-      </div>
-      <div class="sticky-placeholder"></div>
-    </div> -->
+
     <div id="aesthetics-1">
       <div class="text-container relative">
         <div class="left padding-left text-right center">
@@ -62,7 +51,11 @@
       </div>
       <div class="sticky relative">
         <div class="img-container">
-          <img #image src="assets/KRU_S1A2233-be_1.jpg" [style.opacity]="hideFoot ? 0 : 1"/>
+          <picture>
+            <source media="(min-width: 2048px)" srcset="assets/aesthetics1_2k.jpg">
+            <img #image src="assets/aesthetics1_1k.jpg" [style.opacity]="hideFoot ? 0 : 1"/>
+            <!-- <img #image src="assets/KRU_S1A2233-be_1.jpg" [style.opacity]="hideFoot ? 0 : 1"/> -->
+          </picture>
         </div>
       </div>
       <div class="sticky-placeholder"></div>
@@ -86,14 +79,17 @@
           </p>
         </div>
         <div style="overflow: hidden; width: 100%;">
-          <img
-            #image
-            (scrollFx)="hideFoot = $event == 0"
-            ratio=".9"
-            class="fade-in"
-            src="assets/KRU_S1A2207-be_1.jpg"
-            style="width: 112%; margin-left: -4%;"
-          />
+          <picture>
+            <source media="(min-width: 2048px)" srcset="assets/aesthetics2_2k.jpg">
+            <img
+              #image
+              (scrollFx)="hideFoot = $event == 0"
+              ratio=".9"
+              class="fade-in"
+              src="assets/aesthetics2_1k.jpg"
+              style="width: 112%; margin-left: -4%;"
+            />
+          </picture>
         </div>
       </div>
     </div>
@@ -198,13 +194,17 @@
         </p>
       </div>
       <div class="right relative">
-        <img
-          src="assets/acoustics-2.jpg"
-          #image
-          scrollFx
-          ratio=".3"
-          class="fade-in"
-        />
+        <picture>
+          <source media="(min-width: 1024px)" srcset="assets/acoustics2_2k.jpg">
+          <source media="(min-width: 2048px)" srcset="assets/acoustics2_4k.jpg">
+          <img
+            src="assets/acoustics2_1k.jpg"
+            #image
+            scrollFx
+            ratio=".3"
+            class="fade-in"
+          />
+        </picture>
         <div scrollFx class="brand-logo-container fade-in delay-1">
           <img
             src="assets/icons-logos/MEG-logo.png"
@@ -219,10 +219,14 @@
     <div class="spacer"></div>
     <div id="acoustics-3" *ngIf="isLg">
       <div class="sticky relative">
-        <img 
-          src="assets/KRU-BA1-Nahaufnahme.jpg"
-          #image [style.transform]="acousticsImageTransform"
-        />
+        <picture>
+          <source media="(min-width: 1024px)" srcset="assets/acoustics3_2k.jpg">
+          <source media="(min-width: 2048px)" srcset="assets/acoustics3_4k.jpg">
+          <img 
+            src="assets/acoustics3_1k.jpg"
+            #image [style.transform]="acousticsImageTransform"
+          />
+        </picture>
       </div>
       <div class="text-container relative">
         <div 
@@ -271,8 +275,8 @@
       </div>
       <div class="middle">
         <img 
-          src="assets/KRU-BA1-Nahaufnahme.jpg"
-          #image [style.transform]="acousticsImageTransform"
+          src="assets/acoustics3_1k.jpg"
+          #image
         />
       </div>
       <div class="bottom">
@@ -331,10 +335,14 @@
       </div>
     </div>
     <div class="sticky relative">
-      <img
-        src="assets/KRU_S1A6569-be_1.jpg"
-        [style.filter]="tailorImageFilter"
-      />
+      <picture>
+        <source media="(min-width: 1024px)" srcset="assets/tailor-made_2k.jpg">
+        <source media="(min-width: 2048px)" srcset="assets/tailor-made_4k.jpg">
+        <img
+          src="assets/tailor-made_1k.jpg"
+          [style.filter]="tailorImageFilter"
+        />
+      </picture>
     </div>
     <div class="sticky-placeholder"></div>
   </section>
