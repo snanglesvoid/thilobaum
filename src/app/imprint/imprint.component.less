@@ -1,0 +1,66 @@
+@import "../../styles/variables.less";
+
+:host {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+}
+
+:host.visible {
+  padding-top: 4rem;
+  max-height: 1000rem;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  margin-top: 8vw;
+  font-family: "Riviera Regular", sans-serif;
+
+  h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 40% 60%;
+}
+
+.left {
+  padding-right: 4rem;
+}
+.right {
+  padding-right: 4rem;
+}
+
+p {
+  font-size: 1.2rem;
+  // line-height: 1.2;
+}
+
+h3 {
+  width: 100%;
+  font-size: 1.2rem;
+  border-bottom: 1px solid white;
+}
+
+p.small {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: @size-md) {
+  .grid {
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+  }
+  .left,
+  .right {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

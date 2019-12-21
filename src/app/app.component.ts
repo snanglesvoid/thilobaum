@@ -97,4 +97,14 @@ export class AppComponent implements OnInit {
   @ViewChildren(SectionDirective) sections: QueryList<SectionDirective>;
 
   hideFoot = false;
+  showImprint: boolean = false;
+
+  toggleImprint() {
+    this.showImprint = !this.showImprint;
+    if (this.showImprint) {
+      setTimeout(() => {
+        document.getElementById("imprint").scrollIntoView();
+      }, 200);
+    }
+  }
 }

@@ -246,6 +246,8 @@
       margin-left: -100%;
     }
     img {
+      width: 50%;
+      margin-left: 25%;
     }
   }
   .sticky-placeholder {
@@ -449,5 +451,26 @@
     .relative {
       padding-top: 4rem;
     }
+  }
+}
+
+.footer-span {
+  font-family: "Riviera Regular", sans-serif;
+  font-size: 1.4rem;
+  opacity: 0.75;
+}
+
+.footer-logo {
+  height: 1rem;
+  width: auto;
+  display: inline-block;
+}
+
+@media screen and (max-width: @size-md) {
+  .footer-logo {
+    height: 0.8rem;
+  }
+  .footer-span {
+    font-size: 1.2rem;
   }
 }

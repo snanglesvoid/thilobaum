@@ -4,9 +4,10 @@
   hearing from you.
 </p>
 <div class="signature text-right">
-  <h3 style="white-space: nowrap;">
+  <img src="assets/signature.png" style="width:70%;" />
+  <!-- <h3 style="white-space: nowrap;">
     <span style="color: lightcoral">Signature image missing -></span>Thilo Baum
-  </h3>
+  </h3> -->
 </div>
 <form id="contact-form" autocomplete="off" (submit)="submit($event)">
   <input
@@ -26,6 +27,7 @@
       spellcheck="false"
       autocorrect="off"
       placeholder="First Name*"
+      [(ngModel)]="data.firstname"
     />
   </app-input-label>
   <app-input-label>
@@ -38,6 +40,7 @@
       spellcheck="false"
       autocorrect="off"
       placeholder="Last Name*"
+      [(ngModel)]="data.lastname"
     />
   </app-input-label>
   <app-input-label>
@@ -51,6 +54,7 @@
       spellcheck="false"
       autocorrect="off"
       placeholder="E-mail*"
+      [(ngModel)]="data.email"
     />
   </app-input-label>
   <label for="message" id="message-label">
@@ -64,6 +68,7 @@
     autocomplete="nope"
     spellcheck="false"
     autocorrect="off"
+    [(ngModel)]="data.message"
   ></textarea>
   <app-checkbox>
     <input
@@ -72,6 +77,7 @@
       name="data-agree"
       id="data-agree-input"
       style="display:none;"
+      [(ngModel)]="data.agree"
       input
     />
     <label for="data-agree" label>

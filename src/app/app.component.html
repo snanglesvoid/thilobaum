@@ -160,12 +160,8 @@
       </div>
       <div class="right sticky relative">
         <div class="img-container">
-          <img src="assets/closeup_capture.JPG" [style.filter]="acoustics1ImageFilter">
+          <img src="assets/speakerTransparent.png" [style.filter]="acoustics1ImageFilter">
         </div>
-        <div class="center text-center" style="width: 100%;">
-          <h3 style="text-align: center; color: lightcoral;">Image missing!</h3>
-        </div>
-        <img src="" alt="" />
       </div>
       <div class="sticky-placeholder">
 
@@ -357,11 +353,6 @@
       <div class="left">
         <div class="relative" style="height: 100%;">
           <img src="assets/contact.jpg" class="center">
-          <div class="center text-center" style="width: 100%;">
-            <h3 style="color: lightcoral; text-align: center; width: 100%;">
-              Image missing
-            </h3>
-          </div>
         </div>
       </div>
       <div class="right text-left padding-right relative">
@@ -415,20 +406,24 @@
       </div>
       <div class="spacer" style="height: 10vw;"></div>
       <img
-        src="assets/logo.JPG"
-        style="height: 2.5vw; width: auto; display: inline-block;"
+        src="assets/logo.svg"
+        class="footer-logo"
       />
       <span
-        style="font-family: 'Riviera Regular', sans-serif; font-size: 2vw; opacity: .75; padding-left: 4vw;"
-        >&reg;2019</span
+        class="footer-span  "
+        style="padding-left: 4vw;"
+        >©2019</span
       >
       <span
-        style="font-family: 'Riviera Regular', sans-serif; font-size: 2vw; opacity: .75; float: right;"
+        class="footer-span  "
+        style="cursor: pointer; float: right;"
+        (click)="toggleImprint()"
       >
-        <span style="color: lightcoral">was soll hier rein? -></span>
         IMPRINT
       </span>
       <div class="spacer" style="height: 2vw;"></div>
+
+      <app-imprint id="imprint" [visible]="showImprint"></app-imprint>
     </div>
   </section>
 </div>
