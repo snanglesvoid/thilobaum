@@ -57,6 +57,9 @@
       img {
         margin-top: -58%;
         margin-left: -3%;
+        width: 150%;
+        margin-bottom: -15%;
+        height: auto;
       }
     }
     .right {
@@ -93,6 +96,10 @@
     div {
       padding-right: 3vw !important;
     }
+    .center {
+      bottom: 8%;
+      top: unset;
+    }
   }
   .sticky {
     z-index: -1;
@@ -118,14 +125,23 @@
 
 @media screen and (max-width: @size-md) {
   #aesthetics-1 {
-    .img-container {
-      width: 200%;
-      margin-left: -100%;
+    .sticky {
+      width: 50%;
+      .img-container {
+        width: 200%;
+        margin-left: -100%;
+        overflow: hidden;
+      }
     }
 
     .left {
       text-align: left !important;
       width: calc(200% - 6rem);
+    }
+
+    .text-container {
+      width: 50%;
+      background: transparent;
     }
   }
 }
@@ -272,20 +288,32 @@
 }
 
 #acoustics-1 {
+  box-shadow: inset 0px -46px 54px -23px rgba(0, 0, 0, 1);
+  .fade {
+    width: 100%;
+    height: 46vh;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 80%,
+      #000 100%
+    );
+    margin-bottom: -37vh;
+  }
   .sticky {
     z-index: -1;
-    top: 25vh;
+    top: 16vh;
     width: 50%;
     float: right;
     .img-container {
-      height: 44vw;
+      height: 91vh;
       overflow: hidden;
       width: 200%;
       margin-left: -100%;
     }
     img {
-      width: 40%;
-      margin-left: 30%;
+      width: 50%;
+      margin-left: 35%;
     }
   }
   .sticky-placeholder {
@@ -297,12 +325,18 @@
     width: 50%;
     float: left;
     position: relative;
+    p {
+      width: 80vw;
+    }
+    h1 {
+      margin-bottom: 4vw;
+    }
     // background: linear-gradient(90deg, #000000 50%, rgba(0, 0, 0, 0) 100%);
   }
 
   .align-bottom {
     position: absolute;
-    bottom: 0;
+    bottom: 17vh;
     width: 100%;
   }
 }
@@ -468,6 +502,9 @@
 }
 
 #contact {
+  .section-title {
+    margin-top: 8vw;
+  }
   .left {
     img {
       width: calc(100% - 4vw);
