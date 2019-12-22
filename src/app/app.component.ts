@@ -23,13 +23,25 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.windowResized();
+    setTimeout(() => {
+      this.shouldgoout = true;
+    }, 5600);
   }
 
   imagesLoadProgress(event) {
     this.loadingProgress = event;
   }
+  shouldgoout = false;
   imagesLoadComplete(event) {
-    this.imagesLoaded = true;
+    let f = () => {
+      console.log("f, timeout", this.shouldgoout);
+      if (this.shouldgoout) {
+        this.imagesLoaded = true;
+      } else {
+        setTimeout(f, 100);
+      }
+    };
+    setTimeout(f, 100);
   }
 
   loadingProgress = 0;
