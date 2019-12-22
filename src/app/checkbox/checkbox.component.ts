@@ -4,13 +4,13 @@ import {
   AfterContentInit,
   ContentChild,
   ElementRef,
-  HostBinding,
-} from '@angular/core'
+  HostBinding
+} from "@angular/core";
 
 @Component({
-  selector: 'app-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.less'],
+  selector: "app-checkbox",
+  templateUrl: "./checkbox.component.html",
+  styleUrls: ["./checkbox.component.less"]
 })
 export class CheckboxComponent implements OnInit, AfterContentInit {
   constructor() {}
@@ -18,16 +18,16 @@ export class CheckboxComponent implements OnInit, AfterContentInit {
   ngOnInit() {}
 
   ngAfterContentInit() {
-    console.log(this.input.nativeElement)
+    console.log(this.input.nativeElement);
   }
 
-  @ContentChild('input', { static: true }) input: ElementRef<HTMLInputElement>
+  @ContentChild("input", { static: true }) input: ElementRef<HTMLInputElement>;
 
-  @HostBinding('class.checked')
-  checked = false
+  @HostBinding("class.checked")
+  checked = false;
 
   toggle() {
-    this.checked = !this.checked
-    this.input.nativeElement.checked = this.checked
+    this.checked = !this.checked;
+    this.input.nativeElement.checked = this.checked;
   }
 }
