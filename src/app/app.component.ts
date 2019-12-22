@@ -107,4 +107,9 @@ export class AppComponent implements OnInit {
       }, 200);
     }
   }
+
+  arrowClicked() {
+    let div = document.getElementById("aetitle");
+    window.location.hash = "aesthetics-1";
+  }
 }

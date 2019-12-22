@@ -62,7 +62,7 @@ h3 {
 p,
 span {
   line-height: 1.4;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
 }
 
 img {
@@ -188,19 +188,33 @@ img {
 }
 
 .flex-row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-basis: 25%;
-  * {
-    flex: 1 0 28%;
-  }
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: row;
+  // justify-content: space-evenly;
+  // flex-basis: 25%;
+  // * {
+  //   flex: 1 0 28%;
+  // }
+
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 50% 50%;
+  width: calc(100% - 12vw);
+  padding-left: 6vw;
+  margin-bottom: 8vw;
+}
+.flex-row-3 {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 33% 33% 33%;
+  width: 100%;
 }
 
 img.brand-logo {
   height: 10vw;
-  width: auto;
+  width: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
   cursor: pointer;
 }
@@ -213,15 +227,17 @@ img.brand-logo {
 
 img.logo-wrap {
   height: 6vw;
-  width: 20%;
+  width: 100%;
   max-width: 16vw;
   -o-object-fit: contain;
   object-fit: contain;
   background: white;
   padding: 1vw;
   border-radius: 3vw;
-  margin-top: 2vw;
+  margin-top: 0vw;
   margin-bottom: 2vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .circle {
@@ -265,6 +281,10 @@ img.logo-wrap {
   filter: brightness(1);
   transform: scale(1) translateY(-2px);
   // box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5);
+}
+
+.logo-wrap.hover-fx:hover {
+  transform: translateX(-50%) scale(1) translateY(-2px);
 }
 
 @media screen and (max-width: @size-md) {

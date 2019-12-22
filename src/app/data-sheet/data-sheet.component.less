@@ -6,6 +6,7 @@
   max-height: 0;
   transition: all 1s ease;
   width: 100%;
+  padding-top: 14vw;
 }
 :host.visible {
   max-height: 150vw;
@@ -56,6 +57,8 @@
     "horlabel empty"
     "svg vertlabel";
 
+  margin-bottom: 9.25vw;
+
   .svg-component {
     grid-area: svg;
     text-align: center;
@@ -67,6 +70,18 @@
   app-vertical-label {
     grid-area: vertlabel;
   }
+}
+
+.speaker-front {
+  grid-template-rows: 1fr 6vw;
+  grid-template-columns: 1fr 7vw 2vw;
+  grid-template-areas:
+    "svg vertlabel"
+    "horlabel empty";
+}
+
+.speaker-side {
+  grid-template-rows: 1fr;
 }
 
 @media screen and (max-width: @size-md) {
@@ -119,6 +134,7 @@
     grid-template-rows: 2rem 1fr;
     grid-template-columns: 1fr 2rem 0;
     padding: 0.5rem;
+    margin-bottom: 0;
   }
 
   .data-row {

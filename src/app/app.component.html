@@ -29,19 +29,23 @@
         </div>
       </div>
     </div>
+
+    <div class="arrow" (click)="arrowClicked()">
+
+    </div>
   </section>
 
   <div class="spacer"></div>
 
   <section id="aesthetics" class="relative" section="aesthetics">
-    <div class="section-title fade-in" scrollFx>
+    <div id="aetitle" class="section-title fade-in" scrollFx>
       <h1>Aesthetics</h1>
     </div>
 
     <div id="aesthetics-1">
       <div class="text-container relative">
         <div class="left padding-left text-right center">
-          <h3>
+          <h3 id="aesthetics-1">
             “I have always dreamed of a speaker that blends sensual aesthetics
             and revolutionary acoustic technology – but I simply couldn’t find
             it. So I decided to design it myself.”<br />
@@ -97,7 +101,7 @@
     <div id="aesthetics-3">
       <div class="columns background-fade-bottom-light">
         <div class="left relative">
-          <img src="assets/aesthetics3.png" class="center">
+          <img src="assets/aesthetics3.jpg" class="center">
           <!-- <h3
             class="center padding-left"
             style="text-align: center; color: lightcoral;"
@@ -107,8 +111,8 @@
         </div>
         <div class="top-right padding-right">
           <h1>
-            <strong>K1 LIMITED EDITION</strong> –
-            SOUND AND DESIGN
+            <strong>K1 LIMITED EDITION</strong> –<br/>
+            SOUND AND DESIGN<br/>
             MERGED IN PERFECTION.
           </h1>
         </div>
@@ -174,23 +178,25 @@
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="columns" id="acoustics-2">
-      <div class="left text-left padding-left background-fade-left-2">
-        <h1>
-          DEVELOPED IN <br />
-          EAST GERMANY,<br />
-          <strong>BUILT FOR ETERNITY</strong>
-        </h1>
-        <p>
-          Connoisseurs call him the golden ear. Joachim Kiesler started
-          developing in 1974 what speaker elitists now trade as nothing less
-          than an acoustic revelation. With over half a century of experience
-          the Saxony based company ME-Geithain still develops and constructs all
-          of his creations modularly on-site – leading to independence from
-          third parties, ensuringthat all components deliver unrivaled quality
-          and will be available long-term. This uncompromising dedication to
-          sustainable engineering sets international standards and makes every
-          ME speaker a true investment in the future.
-        </p>
+      <div class="left relative background-fade-left-2">
+        <div class="text-left padding-left center">
+          <h1>
+            DEVELOPED IN <br />
+            EAST GERMANY,<br />
+            <strong>BUILT FOR ETERNITY</strong>
+          </h1>
+          <p>
+            Connoisseurs call him the golden ear. Joachim Kiesler started
+            developing in 1974 what speaker elitists now trade as nothing less
+            than an acoustic revelation. With over half a century of experience
+            the Saxony based company ME-Geithain still develops and constructs all
+            of his creations modularly on-site – leading to independence from
+            third parties, ensuringthat all components deliver unrivaled quality
+            and will be available long-term. This uncompromising dedication to
+            sustainable engineering sets international standards and makes every
+            ME speaker a true investment in the future.
+          </p>
+        </div>
       </div>
       <div class="right relative">
         <picture>
@@ -199,9 +205,6 @@
           <img
             src="assets/acoustics2_1k.jpg"
             #image
-            scrollFx
-            ratio=".3"
-            class="fade-in"
           />
         </picture>
         <div scrollFx class="brand-logo-container fade-in delay-1">
@@ -252,9 +255,6 @@
             (click)="toggleDatasheet()"
             [class.shifted]="datasheetVisible"
           >
-            <div class="circle">
-              <div class="circle-inner"></div>
-            </div>
             <span>
               Technical Datasheet <br />
               <strong>K1 Limited Edition</strong>
@@ -293,9 +293,6 @@
           (click)="toggleDatasheet()"
           [class.shifted]="datasheetVisible"
         >
-          <div class="circle">
-            <div class="circle-inner"></div>
-          </div>
           <span>
             Technical Datasheet <br />
             <strong>K1 Limited Edition</strong>
@@ -356,6 +353,7 @@
       <div class="left">
         <div class="relative" style="height: 100%;">
           <img src="assets/contact.jpg" class="center">
+          <div class="shadow center"></div>
         </div>
       </div>
       <div class="right text-left padding-right relative">
@@ -387,6 +385,13 @@
           class="brand-logo hover-fx"
         />
         <img
+          src="assets/icons-logos/LOGO_pechner.jpg"
+          #image
+          class="brand-logo hover-fx logo-wrap"
+        />
+      </div>
+      <div class="flex-row-3">
+        <img
           src="assets/icons-logos/LIPNER_LOGO3.png"
           #image
           class="brand-logo hover-fx"
@@ -398,11 +403,6 @@
         />
         <img
           src="assets/icons-logos/projektor-logo.jpg"
-          #image
-          class="brand-logo hover-fx logo-wrap"
-        />
-        <img
-          src="assets/icons-logos/LOGO_pechner.jpg"
           #image
           class="brand-logo hover-fx logo-wrap"
         />
