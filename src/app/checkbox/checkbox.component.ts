@@ -4,7 +4,8 @@ import {
   AfterContentInit,
   ContentChild,
   ElementRef,
-  HostBinding
+  HostBinding,
+  Input
 } from "@angular/core";
 
 @Component({
@@ -16,6 +17,13 @@ export class CheckboxComponent implements OnInit, AfterContentInit {
   constructor() {}
 
   ngOnInit() {}
+
+  @Input() error = "";
+
+  @HostBinding("class.error")
+  get hasError() {
+    return this.error !== null && this.error !== "";
+  }
 
   ngAfterContentInit() {
     console.log(this.input.nativeElement);

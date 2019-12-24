@@ -25,6 +25,8 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.idSuffix = "_" + +new Date();
+
+    (window as any).form = this;
   }
 
   ngAfterViewInit() {
@@ -42,10 +44,33 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
 
   submit(event) {
     event.preventDefault();
+    if (this.data.empty) return "oops robot";
     this.inputs.map(x => x.nativeElement).forEach(x => console.log(x.name));
     this.data.agree = this.inputs
       .map(x => x.nativeElement)
       .find(x => x.name == "data-agree").checked;
+    let error = false;
+    if (!this.data.firstname) {
+      this.errors.firstname = "required";
+      error = true;
+    }
+    if (!this.data.lastname) {
+      this.errors.lastname = "required";
+      error = true;
+    }
+    if (!this.data.email) {
+      this.errors.email = "required";
+      error = true;
+    } else if (!validateEmail(this.data.email)) {
+      this.errors.email = "invalid";
+      error = true;
+    }
+    if (!this.data.agree) {
+      this.errors.agree = "required";
+    }
+    if (error) {
+      return;
+    }
     console.log(this.data);
     if (!this.data.agree) return;
     let headers = new HttpHeaders({
@@ -53,7 +78,7 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
     });
     this.http
       .post(
-        "http://localhost:3000",
+        "/post-message",
         {
           data: this.data
         },
@@ -74,6 +99,15 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
     lastname: "",
     email: "",
     message: "",
-    agree: false
+    agree: false,
+    empty: ""
+  };
+
+  errors = {
+    firstname: null,
+    lastname: null,
+    email: null,
+    message: null,
+    agree: null
   };
 }

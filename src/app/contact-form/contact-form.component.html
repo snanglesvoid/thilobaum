@@ -19,9 +19,10 @@
     name="hidden"
     style="display: none;"
     autocomplete="false"
+    [(ngModel)]="data.empty"
   />
 
-  <app-input-label>
+  <app-input-label [error]="errors.firstname">
     <input
       #input
       type="text"
@@ -32,9 +33,10 @@
       autocorrect="off"
       placeholder="First Name*"
       [(ngModel)]="data.firstname"
+      (keyup)="errors.firstname = null"
     />
   </app-input-label>
-  <app-input-label>
+  <app-input-label [error]="errors.lastname">
     <input
       #input
       type="text"
@@ -45,9 +47,10 @@
       autocorrect="off"
       placeholder="Last Name*"
       [(ngModel)]="data.lastname"
+      (keyup)="errors.lastname = null"
     />
   </app-input-label>
-  <app-input-label>
+  <app-input-label [error]="errors.email">
     <input
       #input
       type="text"
@@ -59,6 +62,7 @@
       autocorrect="off"
       placeholder="E-mail*"
       [(ngModel)]="data.email"
+      (keyup)="errors.email = null"
     />
   </app-input-label>
   <label for="message" id="message-label">
@@ -74,7 +78,7 @@
     autocorrect="off"
     [(ngModel)]="data.message"
   ></textarea>
-  <app-checkbox>
+  <app-checkbox [error]="errors.agree">
     <input
       #input
       type="checkbox"
@@ -82,6 +86,7 @@
       id="data-agree-input"
       style="display:none;"
       [(ngModel)]="data.agree"
+      (change)="errors.agree = null"
       input
     />
     <label for="data-agree" label>
