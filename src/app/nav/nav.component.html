@@ -7,19 +7,21 @@
 <ul class="navlinks">
   <li [class.active]="sections.activeSection == 'aesthetics'">
     <span class="between">|</span>
-    <a (click)="toggleNav()" href="#aesthetics">Aesthetics</a>
+    <a (click)="toggleNav()" (click)="goToSection('aesthetics')">Aesthetics</a>
   </li>
   <li [class.active]="sections.activeSection == 'acoustics'">
     <span class="between">|</span>
-    <a (click)="toggleNav()" href="#acoustics">Acoustics</a>
+    <a (click)="toggleNav()" (click)="goToSection('acoustics')">Acoustics</a>
   </li>
   <li [class.active]="sections.activeSection == 'tailor-made'">
     <span class="between">|</span>
-    <a (click)="toggleNav()" href="#tailor-made">Tailor-Made</a>
+    <a (click)="toggleNav()" (click)="goToSection('tailor-made')"
+      >Tailor-Made</a
+    >
   </li>
   <li [class.active]="sections.activeSection == 'contact'">
     <span class="between">|</span>
-    <a (click)="toggleNav()" href="#contact">Contact</a>
+    <a (click)="toggleNav()" (click)="goToSection('contact')">Contact</a>
   </li>
 </ul>
 

@@ -68,9 +68,9 @@
     // transform: translateX(-50%);
 
     box-sizing: border-box;
-    height: 2.2vw;
-    width: 2.2vw;
-    bottom: 2vw;
+    height: 1.5rem;
+    width: 1.5rem;
+    bottom: 1.5rem;
     left: 50%;
     border-style: solid;
     border-color: white;
@@ -120,7 +120,14 @@
   }
 }
 
+.scroll-anchor {
+  position: absolute;
+}
 #aesthetics-1 {
+  .scroll-anchor {
+    bottom: 55%;
+  }
+
   .text-container {
     width: 54%;
     float: left;
@@ -416,6 +423,12 @@
     .left {
       width: unset;
       padding-right: 2rem;
+
+      .center {
+        position: relative;
+        transform: none;
+        width: 100%;
+      }
     }
     .right {
       img:not(.brand-logo) {

@@ -10,7 +10,7 @@
     <div class="columns">
       <div class="left">
         <picture>
-          <source media="(min-width: 2048px)" srcset="assets/intro_4k.jpg">
+          <source media="(min-width: 2048px)" srcset="assets/intro_4k.jpg" />
           <!-- <source media="(min-width: 1024px)" srcset="assets/intro_2k.jpg"> -->
           <img #image src="assets/intro_2k.jpg" />
         </picture>
@@ -30,9 +30,7 @@
       </div>
     </div>
 
-    <div class="arrow" (click)="arrowClicked()">
-
-    </div>
+    <div class="arrow" (click)="arrowClicked()"></div>
   </section>
 
   <div class="spacer"></div>
@@ -44,6 +42,7 @@
 
     <div id="aesthetics-1">
       <div class="text-container relative">
+        <div class="scroll-anchor"></div>
         <div class="left padding-left text-right center">
           <h3 id="aesthetics-1">
             “I have always dreamed of a speaker that blends sensual aesthetics
@@ -56,8 +55,15 @@
       <div class="sticky relative">
         <div class="img-container">
           <picture>
-            <source media="(min-width: 2048px)" srcset="assets/aesthetics1_2k.jpg">
-            <img #image src="assets/aesthetics1_1k.jpg" [style.opacity]="hideFoot ? 0 : 1"/>
+            <source
+              media="(min-width: 2048px)"
+              srcset="assets/aesthetics1_2k.jpg"
+            />
+            <img
+              #image
+              src="assets/aesthetics1_1k.jpg"
+              [style.opacity]="hideFoot ? 0 : 1"
+            />
             <!-- <img #image src="assets/KRU_S1A2233-be_1.jpg" [style.opacity]="hideFoot ? 0 : 1"/> -->
           </picture>
         </div>
@@ -84,7 +90,10 @@
         </div>
         <div style="overflow: hidden; width: 100%;">
           <picture>
-            <source media="(min-width: 2048px)" srcset="assets/aesthetics2_2k.jpg">
+            <source
+              media="(min-width: 2048px)"
+              srcset="assets/aesthetics2_2k.jpg"
+            />
             <img
               #image
               (scrollFx)="hideFoot = $event == 0"
@@ -101,7 +110,7 @@
     <div id="aesthetics-3">
       <div class="columns background-fade-bottom-light">
         <div class="left relative">
-          <img src="assets/aesthetics3.png" class="center">
+          <img src="assets/aesthetics3.png" class="center" />
           <!-- <h3
             class="center padding-left"
             style="text-align: center; color: lightcoral;"
@@ -111,8 +120,8 @@
         </div>
         <div class="top-right padding-right">
           <h1>
-            <strong>K1 LIMITED EDITION</strong> –<br/>
-            SOUND AND DESIGN<br/>
+            <strong>K1 LIMITED EDITION</strong> –<br />
+            SOUND AND DESIGN<br />
             MERGED IN PERFECTION.
           </h1>
         </div>
@@ -141,8 +150,8 @@
     <div class="spacer"></div>
     <div id="acoustics-1">
       <div class="text-container">
-        <div 
-          class="left text-left padding-left align-bottom"
+        <div
+          class="left text-left padding-left align-bottom scroll-anchor"
           scrollFx
           (viewportRatio)="acoustics1TextVRChange($event)"
         >
@@ -159,19 +168,22 @@
             manufacturer ME-Geithain is creating more than just speakers. They
             embody something truly magical. Incomparably in their acoustic
             authenticity. Pushing the boundaries of physics. Every speaker being
-            an absolutely identical hand-made masterpiece in sound precision.This
-            is what makes ME speakers the gold standard of the technically highly
-            sophisticated German public television and radio landscape.
+            an absolutely identical hand-made masterpiece in sound
+            precision.This is what makes ME speakers the gold standard of the
+            technically highly sophisticated German public television and radio
+            landscape.
           </p>
         </div>
       </div>
       <div class="right sticky relative">
         <div class="img-container">
-          <img src="assets/speakerTransparent.png" [style.filter]="acoustics1ImageFilter">
+          <img
+            src="assets/speakerTransparent.png"
+            [style.filter]="acoustics1ImageFilter"
+          />
         </div>
       </div>
-      <div class="sticky-placeholder">
-      </div>
+      <div class="sticky-placeholder"></div>
       <!-- <div class="fade"></div> -->
     </div>
     <div class="spacer"></div>
@@ -189,30 +201,35 @@
             Connoisseurs call him the golden ear. Joachim Kiesler started
             developing in 1974 what speaker elitists now trade as nothing less
             than an acoustic revelation. With over half a century of experience
-            the Saxony based company ME-Geithain still develops and constructs all
-            of his creations modularly on-site – leading to independence from
-            third parties, ensuringthat all components deliver unrivaled quality
-            and will be available long-term. This uncompromising dedication to
-            sustainable engineering sets international standards and makes every
-            ME speaker a true investment in the future.
+            the Saxony based company ME-Geithain still develops and constructs
+            all of his creations modularly on-site – leading to independence
+            from third parties, ensuringthat all components deliver unrivaled
+            quality and will be available long-term. This uncompromising
+            dedication to sustainable engineering sets international standards
+            and makes every ME speaker a true investment in the future.
           </p>
         </div>
       </div>
       <div class="right relative">
         <picture>
-          <source media="(min-width: 1024px)" srcset="assets/acoustics2_2k.jpg">
-          <source media="(min-width: 2048px)" srcset="assets/acoustics2_4k.jpg">
-          <img
-            src="assets/acoustics2_1k.jpg"
-            #image
+          <source
+            media="(min-width: 1024px)"
+            srcset="assets/acoustics2_2k.jpg"
           />
+          <source
+            media="(min-width: 2048px)"
+            srcset="assets/acoustics2_4k.jpg"
+          />
+          <img src="assets/acoustics2_1k.jpg" #image />
         </picture>
         <div scrollFx class="brand-logo-container fade-in delay-1">
-          <img
-            src="assets/icons-logos/MEG-logo.png"
-            #image
-            class="brand-logo hover-fx"
-          />
+          <a href="https://www.me-geithain.de/de/" target="_blank">
+            <img
+              src="assets/icons-logos/MEG-logo.png"
+              #image
+              class="brand-logo hover-fx"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -222,34 +239,41 @@
     <div id="acoustics-3" *ngIf="isLg">
       <div class="sticky relative">
         <picture>
-          <source media="(min-width: 1024px)" srcset="assets/acoustics3_2k.jpg">
-          <source media="(min-width: 2048px)" srcset="assets/acoustics3_4k.jpg">
-          <img 
+          <source
+            media="(min-width: 1024px)"
+            srcset="assets/acoustics3_2k.jpg"
+          />
+          <source
+            media="(min-width: 2048px)"
+            srcset="assets/acoustics3_4k.jpg"
+          />
+          <img
             src="assets/acoustics3_1k.jpg"
-            #image [style.transform]="acousticsImageTransform"
+            #image
+            [style.transform]="acousticsImageTransform"
           />
         </picture>
       </div>
       <div class="text-container relative">
-        <div 
+        <div
           class="align-bottom padding-right"
           scrollFx
           (viewportRatio)="acousticsTextVRChange($event)"
         >
           <h1 style="margin-top: 2vw;">
             THE <strong>K1 LIMITED EDITION</strong>
-            INCORPORATES A 3-WAY-COAXIAL ME-SPEAKER TO ACHIEVE THE HIGHEST DEGREE
-            OF SOUND PRECISION POSSIBLE.
+            INCORPORATES A 3-WAY-COAXIAL ME-SPEAKER TO ACHIEVE THE HIGHEST
+            DEGREE OF SOUND PRECISION POSSIBLE.
           </h1>
           <p style="margin-bottom: 3vw;">
             Unparalleled acoustic comprehension and in-depth insights on physics
             research are enabling ME-Geithain to utilize its industry leading
-            inhouse developed coaxial innovation called MCDS Coax. This worldwide
-            unprecedented technology achieves unparalleled homogenous and
-            colouration neutral sound patterns as well as excellent spatiality and
-            unrivaled sound staging.
+            inhouse developed coaxial innovation called MCDS Coax. This
+            worldwide unprecedented technology achieves unparalleled homogenous
+            and colouration neutral sound patterns as well as excellent
+            spatiality and unrivaled sound staging.
           </p>
-  
+
           <div
             class="shift-toggle"
             (click)="toggleDatasheet()"
@@ -273,10 +297,7 @@
         </h1>
       </div>
       <div class="middle">
-        <img 
-          src="assets/acoustics3_1k.jpg"
-          #image
-        />
+        <img src="assets/acoustics3_1k.jpg" #image />
       </div>
       <div class="bottom">
         <p style="margin-bottom: 3vw;">
@@ -311,8 +332,8 @@
     </div>
 
     <div class="text-container relative">
-      <div 
-        class="left padding-left text-left align-bottom" 
+      <div
+        class="left padding-left text-left align-bottom"
         scrollFx
         (viewportRatio)="tailorTextVRChange($event)"
       >
@@ -321,19 +342,24 @@
           <strong>Masterpiece.</strong>
         </h1>
         <p i18n>
-          As a designer product the <strong>BA1</strong> can be tailored to
-          meet your individual needs – perfectly adapting to the exclusive
-          visual demands of your rooms or any advanced acoustic requirements
-          for true one-of-a-kind experience. Naturally ME-Geithain is gladly
-          taking care of professionally setting up your individual BA1
-          configuration.
+          As a designer product the <strong>BA1</strong> can be tailored to meet
+          your individual needs – perfectly adapting to the exclusive visual
+          demands of your rooms or any advanced acoustic requirements for true
+          one-of-a-kind experience. Naturally ME-Geithain is gladly taking care
+          of professionally setting up your individual BA1 configuration.
         </p>
       </div>
     </div>
     <div class="sticky relative">
       <picture>
-        <source media="(min-width: 1024px)" srcset="assets/tailor-made_2k.jpg">
-        <source media="(min-width: 2048px)" srcset="assets/tailor-made_4k.jpg">
+        <source
+          media="(min-width: 1024px)"
+          srcset="assets/tailor-made_2k.jpg"
+        />
+        <source
+          media="(min-width: 2048px)"
+          srcset="assets/tailor-made_4k.jpg"
+        />
         <img
           src="assets/tailor-made_1k.jpg"
           [style.filter]="tailorImageFilter"
@@ -343,16 +369,20 @@
     <div class="sticky-placeholder"></div>
   </section>
 
-  <section id="contact" section="contact" class="relative background-fade-bottom-light">
+  <section
+    id="contact"
+    section="contact"
+    class="relative background-fade-bottom-light"
+  >
     <div scrollFx class="section-title fade-in">
       <h1>Contact</h1>
     </div>
     <div class="spacer"></div>
     <div class="spacer"></div>
-    <div class="columns" style="transform: scale(.9);">
+    <div class="columns" style="transform: scale(.85);">
       <div class="left">
         <div class="relative" style="height: 100%;">
-          <img src="assets/contact.jpg" class="center">
+          <img src="assets/contact.jpg" class="center" />
           <div class="shadow center"></div>
         </div>
       </div>
@@ -379,44 +409,47 @@
 
       <div class="spacer" style="height: 4vw;"></div>
       <div class="flex-row">
-        <img
-          src="assets/icons-logos/MEG-logo.png"
-          #image
-          class="brand-logo hover-fx"
-        />
-        <img
-          src="assets/icons-logos/LOGO_pechner.jpg"
-          #image
-          class="brand-logo hover-fx logo-wrap"
-        />
+        <a href="https://www.me-geithain.de/de/" target="_blank">
+          <img
+            src="assets/icons-logos/MEG-logo.png"
+            #image
+            class="brand-logo hover-fx"
+          />
+        </a>
+        <a href="https://pecherkt.de/" target="_blank">
+          <img
+            src="assets/icons-logos/LOGO_pechner.jpg"
+            #image
+            class="brand-logo hover-fx logo-wrap"
+          />
+        </a>
       </div>
       <div class="flex-row-3">
-        <img
-          src="assets/icons-logos/LIPNER_LOGO3.png"
-          #image
-          class="brand-logo hover-fx"
-        />
-        <img
-          src="assets/icons-logos/HR-Logo.svg"
-          #image
-          class="brand-logo hover-fx"
-        />
-        <img
-          src="assets/icons-logos/projektor-logo.jpg"
-          #image
-          class="brand-logo hover-fx logo-wrap"
-        />
+        <a href="http://lipner.de/typ" target="_blank">
+          <img
+            src="assets/icons-logos/LIPNER_LOGO3.png"
+            #image
+            class="brand-logo hover-fx"
+          />
+        </a>
+        <a href="https://henrikrossbander.de" target="_blank">
+          <img
+            src="assets/icons-logos/HR-Logo.svg"
+            #image
+            class="brand-logo hover-fx"
+          />
+        </a>
+        <a href="https://www.projektor-leipzig.de/" target="_blank">
+          <img
+            src="assets/icons-logos/projektor-logo.jpg"
+            #image
+            class="brand-logo hover-fx logo-wrap"
+          />
+        </a>
       </div>
       <div class="spacer" style="height: 10vw;"></div>
-      <img
-        src="assets/logo.svg"
-        class="footer-logo"
-      />
-      <span
-        class="footer-span  "
-        style="padding-left: 4vw;"
-        >©2019</span
-      >
+      <img src="assets/logo.svg" class="footer-logo" />
+      <span class="footer-span  " style="padding-left: 4vw;">©2019</span>
       <span
         class="footer-span  "
         style="cursor: pointer; float: right;"

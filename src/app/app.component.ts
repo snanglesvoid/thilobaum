@@ -4,10 +4,12 @@ import {
   OnInit,
   HostBinding,
   ViewChildren,
-  QueryList
+  QueryList,
+  ViewChild
 } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 import { SectionDirective } from "./section.directive";
+import { NavComponent } from "./nav/nav.component";
 
 const size_md = 920;
 
@@ -121,7 +123,8 @@ export class AppComponent implements OnInit {
   }
 
   arrowClicked() {
-    let div = document.getElementById("aetitle");
-    window.location.hash = "aesthetics-1";
+    this.nav.goToSection("aesthetics");
   }
+
+  @ViewChild(NavComponent, { static: true }) nav: NavComponent;
 }

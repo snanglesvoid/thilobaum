@@ -85,10 +85,6 @@
 }
 
 @media screen and (max-width: @size-md) {
-  :host {
-    background: #2c2e35;
-  }
-
   :host.visible {
     padding-top: 1rem;
     padding-bottom: 3rem;
@@ -125,6 +121,10 @@
       .speaker-front {
         grid-row: 2;
         grid-column: 2;
+
+        grid-template-areas:
+          "horlabel empty"
+          "svg vertlabel";
       }
     }
   }

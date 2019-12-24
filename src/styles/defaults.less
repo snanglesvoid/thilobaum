@@ -219,12 +219,6 @@ img.brand-logo {
   cursor: pointer;
 }
 
-@media screen and (max-width: @size-md) {
-  img.brand-logo {
-    height: 6rem;
-  }
-}
-
 img.logo-wrap {
   height: 6vw;
   width: 100%;
@@ -238,6 +232,17 @@ img.logo-wrap {
   margin-bottom: 2vw;
   margin-left: 50%;
   transform: translateX(-50%);
+}
+
+@media screen and (max-width: @size-md) {
+  img.brand-logo {
+    height: 6rem;
+  }
+  img.logo-wrap {
+    height: 3rem;
+    max-width: 6rem;
+    margin-top: 1rem;
+  }
 }
 
 .circle {
