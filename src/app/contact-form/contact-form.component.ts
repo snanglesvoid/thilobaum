@@ -9,6 +9,7 @@ import {
 } from "@angular/core";
 
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { NotificationServiceService } from "../notification-service.service";
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -21,7 +22,10 @@ function validateEmail(email) {
   styleUrls: ["./contact-form.component.less"]
 })
 export class ContactFormComponent implements OnInit, AfterViewInit {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private notification: NotificationServiceService
+  ) {}
 
   ngOnInit() {
     this.idSuffix = "_" + +new Date();
@@ -85,8 +89,22 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
         { headers: headers }
       )
       .subscribe(
-        response => console.log("success", response),
-        error => console.error(error)
+        response => {
+          console.log("success", response);
+          this.notification.open(
+            true,
+            "Success!",
+            "Thanks for getting in touch. I will get back to you as soon as possible."
+          );
+        },
+        error => {
+          console.error(error);
+          this.notification.open(
+            false,
+            "Opps something went wrong!",
+            "please try again later..."
+          );
+        }
       );
   }
 

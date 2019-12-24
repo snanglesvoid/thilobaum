@@ -21,6 +21,7 @@ import { SpeakerSvgTopComponent } from "./speaker-svg-top/speaker-svg-top.compon
 import { SpeakerSvgSideComponent } from "./speaker-svg-side/speaker-svg-side.component";
 import { SectionDirective } from "./section.directive";
 import { ImprintComponent } from "./imprint/imprint.component";
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ImprintComponent } from "./imprint/imprint.component";
     SpeakerSvgTopComponent,
     SpeakerSvgSideComponent,
     SectionDirective,
-    ImprintComponent
+    ImprintComponent,
+    NotificationsComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
