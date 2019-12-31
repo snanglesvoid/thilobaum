@@ -289,7 +289,7 @@
       filter: saturate(1.5) brightness(0.75);
       width: 60%;
       margin-left: 20%;
-      margin-top: 12%;
+      margin-top: 8%;
     }
   }
   .top-right {
@@ -542,6 +542,18 @@
   .align-bottom {
     position: absolute;
     bottom: 12vw;
+  }
+}
+
+@media screen and (min-width: @size-md+1) {
+  #tailor-made {
+    .sticky {
+      img {
+        object-position: bottom;
+        object-fit: cover;
+        height: 110vh;
+      }
+    }
   }
 }
 

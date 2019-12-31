@@ -92,22 +92,33 @@ export class NavComponent implements OnInit {
     let begin = window.scrollY;
     let section = document.getElementById(sectionId);
     let anchor: HTMLDivElement = section.querySelector(".scroll-anchor");
+    // console.log("scroll to section ", sectionId);
     let scrollTarget = section.offsetTop;
+    let deltaY = Math.abs(scrollTarget - begin);
+    let h = document.querySelector("body").getBoundingClientRect().height;
+    const scrollTime = 1000 + 4000 * (deltaY / h);
+    console.log(deltaY, h, scrollTime);
     if (anchor) {
       scrollTarget += anchor.offsetTop;
     }
 
-    console.log(section, this.data.scrollY, scrollTarget);
+    // console.log(section, this.data.scrollY, scrollTarget);
 
     let t0 = new Date().getTime();
     let t;
     let update = () => {
       t = new Date().getTime();
-      if (t - t0 < 1500) {
+      // console.log(
+      //   "update, timedelta:",
+      //   t - t0,
+      //   ", delta:",
+      //   EasingFunctions.easeInOutQuad((t - t0) / scrollTime)
+      // );
+      if (t - t0 >= scrollTime) {
         window.scrollTo(0, scrollTarget);
       } else {
-        let delta = (t - t0) / 1500;
-        delta = EasingFunctions.easeInOutCubic(delta);
+        let delta = (t - t0) / scrollTime;
+        delta = EasingFunctions.easeInOutQuad(delta);
         let y = begin + delta * (scrollTarget - begin);
         window.scrollTo(0, y);
         window.requestAnimationFrame(update);

@@ -1,5 +1,5 @@
 <div class="logo" [class.active]="sections.activeSection == 'intro'">
-  <a href="#intro">
+  <a (click)="goToSection('intro')">
     <img src="assets/logo.svg" />
   </a>
 </div>
