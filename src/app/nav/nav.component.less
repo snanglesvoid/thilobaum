@@ -7,6 +7,7 @@
   top: 0;
   left: 0;
   width: 100vw;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   height: 3rem;
   line-height: 3rem;
@@ -68,7 +69,7 @@ ul li {
   text-transform: uppercase;
   // transition: margin 1.8s linear, transform 1.8s linear, opacity 1.8s linear;
   opacity: 0.5;
-  transition: margin 0.8s linear, transform 0.8s, opacity 2.8s ease-out;
+  transition: margin 0.4s linear, transform 0.4s linear, width 0.4s linear, opacity 2.8s ease-out;
   transform: scale(0.6) translateY(-6px);
   transform-origin: bottom;
 }
@@ -149,10 +150,13 @@ ul li.active {
     li {
       display: block;
       border-bottom: 1px solid white;
+      width: 200%;
+      margin-left: -50%;
     }
     li.active {
       margin-right: 0;
       margin-left: 0;
+      width: 100%;
       transform: none;
     }
   }

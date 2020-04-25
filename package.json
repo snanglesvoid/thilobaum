@@ -36,6 +36,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "babel-eslint": "^10.1.0",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -47,6 +48,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.8.3"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.",

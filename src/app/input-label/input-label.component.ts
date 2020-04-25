@@ -1,13 +1,11 @@
 import {
   Component,
   OnInit,
-  HostListener,
   ContentChild,
   ElementRef,
   AfterContentInit,
   HostBinding,
   Input,
-  ɵCompiler_compileModuleSync__POST_R3__
 } from "@angular/core";
 
 @Component({

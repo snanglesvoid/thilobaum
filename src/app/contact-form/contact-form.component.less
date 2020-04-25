@@ -1,5 +1,14 @@
 @import "../../styles/variables.less";
 
+span.riv {
+  font-weight: bold;
+  font-family: "Riviera Regular", sans-serif !important;
+}
+
+.dslkfj {
+  width: 10%;
+}
+
 :host {
   display: block;
   position: relative;
@@ -55,24 +64,29 @@ label {
 }
 
 #send-button {
-  background: transparent;
+  background: white; //#2997ff;
+  border-radius: 2vw;
   outline: none;
-  color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  font-size: 2vw;
-  line-height: 4vw;
-  height: 4vw;
-  text-transform: uppercase;
+  color: black;
+  //rgba(255, 255, 255, 0.75);
+  border: none; //1px solid rgba(255, 255, 255, 0.75);
+  font-size: 1.5vw;
+  font-weight: 100;
+  line-height: 3vw;
+  height: 3vw;
+  text-transform: capitalize;
   padding: 0;
+  opacity: 0.75;
   padding-left: 2vw;
   padding-right: 2vw;
-  transition: color 0.6s ease, border-color 0.6s ease;
+  transition: opacity 0.4s ease, color 0.6s ease, border-color 0.6s ease;
   cursor: pointer;
 }
 
 #send-button:hover {
-  color: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 255, 255, 1);
+  opacity: 1;
+  //color: rgba(255, 255, 255, 1);
+  //border-color: rgba(255, 255, 255, 1);
 }
 
 ::-webkit-input-placeholder {
@@ -116,7 +130,10 @@ input.error {
     margin-top: 1.4rem !important;
     margin-top: 0.7rem;
   }
-
+  #signature {
+    width: 60%;
+    margin-right: -2rem;
+  }
   .placeholder {
     line-height: 2rem;
     font-size: 1.4rem;

@@ -3,12 +3,12 @@
   2020
 </h1>
 <p scrollFx class="fade-in">
-  Whether you want to place your request, exclusively customize your K1 or
-  you’re just very curious about a technical detail – I‘m looking forward to
-  hearing from you.
+  Whether you want to place your request, exclusively customize your
+  <span class="riv">K1</span> or you’re just very curious about a technical
+  detail – I‘m looking forward to hearing from you.
 </p>
 <div class="signature text-right">
-  <img src="assets/signature.png" style="width:70%;" />
+  <img id="signature" src="assets/signature.png" style="width: 70%;" />
   <!-- <h3 style="white-space: nowrap;">
     <span style="color: lightcoral">Signature image missing -></span>Thilo Baum
   </h3> -->
@@ -84,7 +84,7 @@
       type="checkbox"
       name="data-agree"
       id="data-agree-input"
-      style="display:none;"
+      style="display: none;"
       [(ngModel)]="data.agree"
       (change)="errors.agree = null"
       input

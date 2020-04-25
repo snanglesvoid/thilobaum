@@ -80,6 +80,7 @@ img {
 }
 
 .section-title {
+  display: none;
   position: absolute;
   width: 100%;
   top: 0;
@@ -217,6 +218,7 @@ img.brand-logo {
   -o-object-fit: contain;
   object-fit: contain;
   cursor: pointer;
+  filter: grayscale(100%);
 }
 
 img.logo-wrap {
@@ -225,13 +227,14 @@ img.logo-wrap {
   max-width: 16vw;
   -o-object-fit: contain;
   object-fit: contain;
-  background: white;
+  background: transparent;
   padding: 1vw;
-  border-radius: 3vw;
+  //border-radius: 3vw;
   margin-top: 0vw;
   margin-bottom: 2vw;
   margin-left: 50%;
   transform: translateX(-50%);
+  filter: grayscale(100%) invert(100%) contrast(5000); 
 }
 
 @media screen and (max-width: @size-md) {

@@ -1,11 +1,13 @@
 {
-  "extends": "tslint:recommended",
+  "extends": "tslint:recommended, tslint-config-prettier",
   "rules": {
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
       "severity": "warning"
     },
+    "semicolon": [true, "never"],
+    
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,

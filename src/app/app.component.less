@@ -10,16 +10,29 @@
   }
 }
 
+.riv {
+  font-family: "Riviera Regular", sans-serif !important;
+  font-weight: bold;
+}
+
 .shift-toggle {
   transition: transform 0.6s ease;
   display: flex;
   cursor: pointer;
-  animation: blink 2.8s ease-in-out infinite alternate;
+  * {
+    color: #2997ff;
+  }
+  //animation: blink 2.8s ease-in-out infinite alternate;
+}
+.shift-toggle:hover {
+  * {
+    text-decoration: underline;
+  }
 }
 .shifted {
   // transform: translateX(7.6vw);
   animation: none;
-  transform: translateX(-80%) translateY(10vw);
+  // transform: translateX(-80%) translateY(10vw);
 }
 
 @keyframes blink {
@@ -131,7 +144,7 @@
   .text-container {
     width: 54%;
     float: left;
-    height: 200vh;
+    height: 120vh;
     padding-top: 25vh;
     background: #000;
     background: #000;
@@ -369,9 +382,6 @@
     width: 50%;
     float: left;
     position: relative;
-    p {
-      width: 80vw;
-    }
     h1 {
       margin-bottom: 4vw;
     }
@@ -449,17 +459,21 @@
 #acoustics-3 {
   .shift-toggle {
     padding-left: 1rem;
-    border-left: 2px solid white;
+    border-left: 2px solid #2997ff;
     span {
       font-family: "Riviera Regular", sans-serif;
-      font-size: 2vw;
+      //font-size: 2vw;
       text-transform: uppercase;
+      font-size: 1.2vw;
     }
   }
   .text-container {
-    height: 184vh;
+    height: 172vh;
     width: 50%;
     float: right;
+    h1 {
+      line-height: 1 !important;
+    }
   }
 
   .align-bottom {
