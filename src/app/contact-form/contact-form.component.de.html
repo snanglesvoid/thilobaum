@@ -1,0 +1,101 @@
+<h1>
+  <strong> K1 is coming <br /> </strong>
+  2020
+</h1>
+<p scrollFx class="fade-in">
+  Ob Sie eine Bestellung abgeben, Ihren persönlichen
+  <span class="riv">K1</span> individualisieren möchten, oder Fragen bezüglich
+  der technischen Details haben – Ich freue mich von Ihnen zu hören.
+</p>
+<div class="signature text-right">
+  <img id="signature" src="assets/signature.png" style="width: 70%;" />
+  <!-- <h3 style="white-space: nowrap;">
+    <span style="color: lightcoral">Signature image missing -></span>Thilo Baum
+  </h3> -->
+</div>
+<form id="contact-form" autocomplete="off" (submit)="submit($event)">
+  <input
+    type="text"
+    name="hidden"
+    style="display: none;"
+    autocomplete="false"
+    [(ngModel)]="data.empty"
+  />
+
+  <app-input-label [error]="errors.firstname">
+    <input
+      #input
+      type="text"
+      [name]="'firstname' + idSuffix"
+      [id]="'firstname-input' + idSuffix"
+      autocomplete="nope"
+      spellcheck="false"
+      autocorrect="off"
+      placeholder="Vorname*"
+      [(ngModel)]="data.firstname"
+      (keyup)="errors.firstname = null"
+    />
+  </app-input-label>
+  <app-input-label [error]="errors.lastname">
+    <input
+      #input
+      type="text"
+      [name]="'lastname' + idSuffix"
+      [id]="'lastname-input' + idSuffix"
+      autocomplete="nope"
+      spellcheck="false"
+      autocorrect="off"
+      placeholder="Nachname*"
+      [(ngModel)]="data.lastname"
+      (keyup)="errors.lastname = null"
+    />
+  </app-input-label>
+  <app-input-label [error]="errors.email">
+    <input
+      #input
+      type="text"
+      [name]="'email' + idSuffix"
+      [id]="'email-input' + idSuffix"
+      class="email"
+      autocomplete="nope"
+      spellcheck="false"
+      autocorrect="off"
+      placeholder="E-mail*"
+      [(ngModel)]="data.email"
+      (keyup)="errors.email = null"
+    />
+  </app-input-label>
+  <label for="message" id="message-label">
+    Nachricht
+  </label>
+  <textarea
+    name="message"
+    id="message-input"
+    cols="30"
+    rows="10"
+    autocomplete="nope"
+    spellcheck="false"
+    autocorrect="off"
+    [(ngModel)]="data.message"
+  ></textarea>
+  <app-checkbox [error]="errors.agree">
+    <input
+      #input
+      type="checkbox"
+      name="data-agree"
+      id="data-agree-input"
+      style="display: none;"
+      [(ngModel)]="data.agree"
+      (change)="errors.agree = null"
+      input
+    />
+    <label for="data-agree" label>
+      Ich habe zur Kenntnis gennomen, dass Thilo Baum meine persönlichen Daten
+      gemäß der legalen Umständen und im Einklang mit der Datenschutzerklärung.
+    </label>
+  </app-checkbox>
+
+  <div class="text-right">
+    <button id="send-button" type="submit">senden</button>
+  </div>
+</form>

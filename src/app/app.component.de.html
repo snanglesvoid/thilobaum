@@ -1,0 +1,498 @@
+<div id="nav-placeholder"></div>
+
+<div
+  id="main"
+  imagesLoaded
+  (progress)="imagesLoadProgress($event)"
+  (complete)="imagesLoadComplete()"
+>
+  <section id="intro" section="intro">
+    <div class="columns">
+      <div class="left">
+        <picture>
+          <source media="(min-width: 2048px)" srcset="assets/intro_4k.jpg" />
+          <!-- <source media="(min-width: 1024px)" srcset="assets/intro_2k.jpg"> -->
+          <img #image src="assets/intro_2k.jpg" />
+        </picture>
+      </div>
+      <div class="right background-fade-right">
+        <div class="text-left relative">
+          <h1>
+            Endlich ein Lautsprecher, der so perfekt aussieht,<br />
+            <strong>wie er klingt.</strong>
+          </h1>
+          <h3>
+            Die Masterclass des<br />
+            deutschen Akustikdesigns.
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow" (click)="arrowClicked()"></div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <section id="aesthetics" class="relative" section="aesthetics">
+    <div id="aetitle" class="section-title fade-in" scrollFx>
+      <h1>Ästhetik</h1>
+    </div>
+
+    <div id="aesthetics-1">
+      <div class="text-container relative">
+        <div class="scroll-anchor"></div>
+        <div class="left padding-left text-right center">
+          <h3 id="aesthetics-1">
+            „Ich habe schon immer von einem Lautsprecher geträumt, der sinnliche
+            Ästhetik und revolutionäre Klangtechno- logie miteinander vereint –
+            doch ich konnte ihn einfach nicht finden. Also beschloss ich, ihn
+            selbst zu designen.“<br />
+          </h3>
+        </div>
+      </div>
+      <div class="sticky relative">
+        <div class="img-container">
+          <picture>
+            <source
+              media="(min-width: 2048px)"
+              srcset="assets/aesthetics1_2k.jpg"
+            />
+            <img
+              #image
+              src="assets/aesthetics1_1k.jpg"
+              [style.opacity]="hideFoot ? 0 : 1"
+            />
+            <!-- <img #image src="assets/KRU_S1A2233-be_1.jpg" [style.opacity]="hideFoot ? 0 : 1"/> -->
+          </picture>
+        </div>
+      </div>
+      <div class="sticky-placeholder"></div>
+    </div>
+    <div class="spacer"></div>
+    <div id="aesthetics-2">
+      <div class="columns">
+        <div class="relative text-left padding-left">
+          <h1>
+            PERFEKTION <br />
+            IST KONSEQUENT – <br />
+            <strong>THILO BAUM</strong>
+          </h1>
+          <p>
+            Als Leipziger Arts and Crafts-Designer begeisterte Thilo Baum mit
+            seinem holistischen Ansatz bereits die Top-Kreativen namhafter
+            Automobilmarken wie Bugatti, Mercedes-Benz oder Porsche.
+          </p>
+          <p>
+            Sein absoluter Blick für das Wesentliche und die leiden- schaftliche
+            Vision einer besseren Welt kreieren eine unvergleichlich präzise
+            Kombination aus zeit- loser Eleganz und meisterhafter
+            Handwerkskunst.
+          </p>
+        </div>
+        <div style="overflow: hidden; width: 100%;">
+          <picture>
+            <source
+              media="(min-width: 2048px)"
+              srcset="assets/aesthetics2_2k.jpg"
+            />
+            <img
+              #image
+              (scrollFx)="hideFoot = $event == 0"
+              ratio=".9"
+              class="fade-in"
+              src="assets/aesthetics2_1k.jpg"
+            />
+            <div class="fade"></div>
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div id="aesthetics-3">
+      <div class="columns background-fade-bottom-light">
+        <div class="left relative">
+          <img src="assets/aesthetics3.png" class="center" />
+          <!-- <h3
+            class="center padding-left"
+            style="text-align: center; color: lightcoral;"
+          >
+            rotating pictures missing
+          </h3> -->
+        </div>
+        <div class="top-right padding-right">
+          <h1>
+            <strong>K1 LIMITED EDITION</strong>–<br />
+            SOUND UND DESIGN<br />
+            VEREINT IN PERFEKTION.
+          </h1>
+        </div>
+        <div class="bottom-right padding-right">
+          <p>
+            Revolutionäre Akustiktechnologie und visionäres Design verschmelzen
+            inspiriert von der formvoll- endeten Eleganz der Natur.
+          </p>
+          <p>
+            Erstklassige Materialität und die kompromisslose Realisation jedes
+            Details machen die
+            <span class="riv">K1 LIMITED EDITION</span>
+            zu einem wahren Meisterstück und zum einzigen Lautsprecher, der dank
+            eines innovativen Verfahrens komplett aus erlesenem Holz kreiert
+            wird.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <section id="acoustics" class="relative" section="acoustics">
+    <div class="section-title fade-in" scrollFx>
+      <h1>Akustik</h1>
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div id="acoustics-1">
+      <div class="text-container">
+        <div
+          class="left text-left padding-left align-bottom scroll-anchor"
+          scrollFx
+          (viewportRatio)="acoustics1TextVRChange($event)"
+        >
+          <h1>
+            Perfektion <br />
+            ist präzise –<br />
+            <strong>
+              Musikelektronik <br />
+              Geithein
+            </strong>
+          </h1>
+          <p>
+            Für Perfektionisten wie Thilo Baum baut die legendäre Manufaktur
+            ME-Geithain mehr als nur Laut- sprecher. Sie verkörpern etwas
+            Magisches. Unver- gleichlich in ihrer akustischen Echtheit scheinen
+            sie die Grenzen der Physik zu überwinden. Dabei ist jeder
+            Lautsprecher ein absolut identisch handgefertigtes Meisterwerk der
+            Klangpräzision.
+          </p>
+          <p>
+            Das macht ME-Lautsprecher zum unangefochtenen Goldstandard in der
+            technisch höchst anspruchsvollen öffentlich-rechtlichen TV- und
+            Radiolandschaft Deutschlands.
+          </p>
+        </div>
+      </div>
+      <div class="right sticky relative">
+        <div class="img-container">
+          <img
+            src="assets/speakerTransparent.png"
+            [style.filter]="acoustics1ImageFilter"
+          />
+        </div>
+      </div>
+      <div class="sticky-placeholder"></div>
+      <!-- <div class="fade"></div> -->
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="columns" id="acoustics-2">
+      <div class="left relative background-fade-left-2">
+        <div class="text-left padding-left center">
+          <h1>
+            ENTWICKELT IN <br />
+            OSTDEUTSCHLAND,<br />
+            <strong>GEBAUT FÜR DIE EWIGKEIT.</strong>
+          </h1>
+
+          <p>
+            Kenner nennen ihn das goldene Ohr. Joachim Kiesler entwickelte 1974,
+            was die Lautsprecherelite heute als akustische Offenbarung handelt.
+          </p>
+          <p>
+            Mit mehr als einem halben Jahrhundert Branchenerfahrung fertigt die
+            sächsische Kultfmanufaktur ME- Geithain all seine Kreationen noch
+            immer vor Ort. Unabhängig von Dritten sind alle Komponenten von
+            unvergleichlicher Qualität und gleichzeitig garantiert dauerhaft
+            verfügbar.
+          </p>
+          <p>
+            Diese kompromisslose Hingabe zu nachhaltiger Ingenieurskunst setzt
+            weltweit Maßstäbe und macht jeden ME-Lautsprecher zu einer echten
+            Investition in die Zukunft.
+          </p>
+          <p>
+            Connoisseurs call him the golden ear. Joachim Kiesler started
+            developing in 1974 what speaker elitists now trade as nothing less
+            than an acoustic revelation.
+          </p>
+        </div>
+      </div>
+      <div class="right relative">
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcset="assets/acoustics2_2k.jpg"
+          />
+          <source
+            media="(min-width: 2048px)"
+            srcset="assets/acoustics2_4k.jpg"
+          />
+          <img src="assets/acoustics2_1k.jpg" #image />
+        </picture>
+        <div scrollFx class="brand-logo-container fade-in delay-1">
+          <a href="https://www.me-geithain.de/de/" target="_blank">
+            <img
+              src="assets/icons-logos/MEG-logo.png"
+              #image
+              class="brand-logo hover-fx"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div id="acoustics-3" *ngIf="isLg">
+      <div class="sticky relative">
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcset="assets/acoustics3_2k.jpg"
+          />
+          <source
+            media="(min-width: 2048px)"
+            srcset="assets/acoustics3_4k.jpg"
+          />
+          <img
+            src="assets/acoustics3_1k.jpg"
+            #image
+            [style.transform]="acousticsImageTransform"
+          />
+        </picture>
+      </div>
+      <div class="text-container relative">
+        <div
+          class="align-bottom padding-right"
+          scrollFx
+          (viewportRatio)="acousticsTextVRChange($event)"
+        >
+          <h1 style="margin-top: 2vw;">
+            FÜR KLANGPRÄZISION IN PERFEKTION VERFÜGT DIE
+            <strong>K1 LIMITED EDITION</strong>ÜBER EINEN PASSIVEN
+            2-WEGE-KOAXIAL LAUTSPRECHER VON
+            <strong>ME-GEITHEIN</strong>
+          </h1>
+          <p>
+            Mit einem einzigartigen Verständnis für Akustik und revolutionären
+            Erkenntnissen in physikalischer Forschung schuf ME-Geithain ihre
+            eigens entwickelte Coaxial-Innovation – MCDS Coax.
+          </p>
+          <p style="margin-bottom: 3vw;">
+            Diese weltweit branchenführende Technologie ermög- licht ein
+            unübertroffen homogenes und verfärbungsarmes Klangbild sowie eine
+            Ortungsschärfe und eine Tiefenstaffelung, die ihresgleichen sucht.
+          </p>
+
+          <div
+            class="shift-toggle"
+            (click)="toggleDatasheet()"
+            [class.shifted]="datasheetVisible"
+          >
+            <span>
+              TECHNISCHES DATENBLATT <br />
+              <strong><span class="riv">K1</span> Limited Edition</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="sticky-placeholder"></div>
+    </div>
+    <div id="acoustics-3-mobile" *ngIf="isMd">
+      <div class="top">
+        <h1 style="margin-top: 2vw;">
+          FÜR KLANGPRÄZISION IN PERFEKTION VERFÜGT DIE
+          <strong>K1 LIMITED EDITION</strong>ÜBER EINEN PASSIVEN 2-WEGE-KOAXIAL
+          LAUTSPRECHER VON
+          <strong>ME-GEITHEIN</strong>
+        </h1>
+      </div>
+      <div class="middle">
+        <img src="assets/acoustics3_1k.jpg" #image />
+      </div>
+      <div class="bottom">
+        <p>
+          Mit einem einzigartigen Verständnis für Akustik und revolutionären
+          Erkenntnissen in physikalischer Forschung schuf ME-Geithain ihre
+          eigens entwickelte Coaxial-Innovation – MCDS Coax.
+        </p>
+        <p style="margin-bottom: 3vw;">
+          Diese weltweit branchenführende Technologie ermög- licht ein
+          unübertroffen homogenes und verfärbungsarmes Klangbild sowie eine
+          Ortungsschärfe und eine Tiefenstaffelung, die ihresgleichen sucht.
+        </p>
+
+        <div
+          class="shift-toggle"
+          (click)="toggleDatasheet()"
+          [class.shifted]="datasheetVisible"
+        >
+          <span>
+            TECHNISCHES DATENBLATT <br />
+            <strong><span class="riv">K1</span> Limited Edition</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+    <app-data-sheet [visible]="datasheetVisible"></app-data-sheet>
+  </section>
+
+  <div class="spacer"></div>
+
+  <section class="relative" id="tailor-made" section="tailor-made">
+    <div scrollFx class="section-title fade-in" style="margin-top: 12vw;">
+      <h1>INDIVIDUALITÄT</h1>
+    </div>
+
+    <div class="text-container relative">
+      <div
+        class="left padding-left text-left align-bottom"
+        scrollFx
+        (viewportRatio)="tailorTextVRChange($event)"
+      >
+        <h1 i18n>
+          Ihr Maßgeschneidertes<br />
+          <strong>Meisterstück.</strong>
+        </h1>
+        <p>
+          Als echtes Designer-Produkt kann der BA1 optisch und technisch Ihren
+          Wünschen angepasst werden, um den exklusiven Ansprüchen Ihrer Räume
+          oder speziellen akustischen Anforderungen in einzigartiger Perfektion
+          gerecht zu werden.
+        </p>
+      </div>
+    </div>
+    <div class="sticky relative">
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcset="assets/tailor-made_2k.jpg"
+        />
+        <source
+          media="(min-width: 2048px)"
+          srcset="assets/tailor-made_4k.jpg"
+        />
+        <img
+          src="assets/tailor-made_1k.jpg"
+          [style.filter]="tailorImageFilter"
+        />
+      </picture>
+    </div>
+    <div class="sticky-placeholder"></div>
+  </section>
+
+  <section
+    id="contact"
+    section="contact"
+    class="relative background-fade-bottom-light"
+  >
+    <div scrollFx class="section-title fade-in">
+      <h1>Contact</h1>
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="columns" style="transform: scale(0.85);">
+      <div class="left">
+        <div class="relative" style="height: 100%;">
+          <img src="assets/contact.jpg" class="center" />
+          <div class="shadow center"></div>
+        </div>
+      </div>
+      <div class="right text-left padding-right relative">
+        <app-contact-form></app-contact-form>
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </section>
+
+  <section id="footer" class="relative">
+    <div scrollFx class="section-title fade-in">
+      <h1>Partners</h1>
+    </div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="text-left padding-left padding-right">
+      <h1>
+        Companies <br />
+        <strong>involved</strong> <br />
+        in production.
+      </h1>
+
+      <div class="spacer" style="height: 4vw;"></div>
+      <div class="flex-row">
+        <a href="https://www.me-geithain.de/de/" target="_blank">
+          <img
+            src="assets/icons-logos/MEG-logo.png"
+            #image
+            class="brand-logo"
+          />
+        </a>
+        <a href="https://pecherkt.de/" target="_blank">
+          <img
+            src="assets/icons-logos/LOGO_pechner.jpg"
+            #image
+            class="brand-logo logo-wrap"
+          />
+        </a>
+      </div>
+      <div class="flex-row">
+        <a href="http://lipner.de/typ" target="_blank">
+          <img
+            src="assets/icons-logos/LIPNER_LOGO3.png"
+            #image
+            class="brand-logo"
+          />
+        </a>
+        <a href="https://henrikrossbander.de" target="_blank">
+          <img src="assets/icons-logos/HR-Logo.svg" #image class="brand-logo" />
+        </a>
+      </div>
+      <div class="flex-row">
+        <a href="https://www.heikobaum.de" target="_blank">
+          <img
+            src="assets/icons-logos/Logo_HeikoBaum.jpg"
+            #image
+            class="brand-logo logo-wrap"
+          />
+        </a>
+        <a href="https://www.projektor-leipzig.de/" target="_blank">
+          <img
+            src="assets/icons-logos/projektor-logo.jpg"
+            #image
+            class="brand-logo logo-wrap"
+          />
+        </a>
+      </div>
+      <div class="spacer" style="height: 10vw;"></div>
+      <img src="assets/logo.svg" class="footer-logo" />
+      <span class="footer-span" style="padding-left: 4vw;">©2019</span>
+      <span
+        class="footer-span"
+        style="cursor: pointer; float: right;"
+        (click)="toggleImprint()"
+      >
+        IMPRINT
+      </span>
+      <div class="spacer" style="height: 2vw;"></div>
+
+      <app-imprint id="imprint" [visible]="showImprint"></app-imprint>
+    </div>
+  </section>
+</div>
+
+<app-nav></app-nav>
+
+<app-notifications></app-notifications>

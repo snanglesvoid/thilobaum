@@ -1,0 +1,29 @@
+<div class="logo" [class.active]="sections.activeSection == 'intro'">
+  <a (click)="goToSection('intro')">
+    <img src="assets/logo.svg" />
+  </a>
+</div>
+
+<ul class="navlinks">
+  <li [class.active]="sections.activeSection == 'aesthetics'">
+    <span class="between">|</span>
+    <a (click)="toggleNav()" (click)="goToSection('aesthetics')">Ästetik</a>
+  </li>
+  <li [class.active]="sections.activeSection == 'acoustics'">
+    <span class="between">|</span>
+    <a (click)="toggleNav()" (click)="goToSection('acoustics')">Akustik</a>
+  </li>
+  <li [class.active]="sections.activeSection == 'tailor-made'">
+    Individualität
+  </li>
+  <li [class.active]="sections.activeSection == 'contact'">
+    <span class="between">|</span>
+    <a (click)="toggleNav()" (click)="goToSection('contact')">Kontakt</a>
+  </li>
+</ul>
+
+<div class="nav-toggle" (click)="toggleNav()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
