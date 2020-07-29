@@ -31,7 +31,7 @@ export class InputLabelComponent implements OnInit, AfterContentInit {
     // console.log(this.input.nativeElement)
   }
 
-  @ContentChild("input", { static: true }) input: ElementRef<HTMLInputElement>;
+  @ContentChild("input", {static: true}) input: ElementRef<HTMLInputElement>;
 
   @Input() error = "";
 
@@ -43,9 +43,12 @@ export class InputLabelComponent implements OnInit, AfterContentInit {
   text = "";
 
   get errorText() {
-    return this.error === "required"
-      ? "This field is required!"
-      : "Please enter a valid email address!";
+    /* return this.error === "required" */
+    /*   ? "This field is required!" */
+    /*   : "Please enter a valid email address!"; */
+    return this.error === 'required'
+      ? 'Dieses Feld ist erforderlich!'
+      : 'Bitte geben Sie eine gültige E-mail Addresse an!'
   }
 
   @HostBinding("class.focus")
