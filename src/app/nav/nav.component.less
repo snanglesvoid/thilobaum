@@ -69,7 +69,8 @@ ul li {
   text-transform: uppercase;
   // transition: margin 1.8s linear, transform 1.8s linear, opacity 1.8s linear;
   opacity: 0.5;
-  transition: margin 0.4s linear, transform 0.4s linear, width 0.4s linear, opacity 2.8s ease-out;
+  transition: margin 0.4s linear, transform 0.4s linear, width 0.4s linear,
+    opacity 2.8s ease-out;
   transform: scale(0.6) translateY(-6px);
   transform-origin: bottom;
 }
@@ -87,6 +88,16 @@ ul li.active {
   margin-left: 1rem;
   transform: scale(1);
   opacity: 1;
+}
+
+ul.language-select {
+  position: absolute;
+  right: 2rem;
+  li.active {
+    margin-right: unset;
+    margin-left: unset;
+    transform: scale(0.6) translateY(-6px);
+  }
 }
 
 .between {
@@ -122,7 +133,7 @@ ul li.active {
   }
 }
 
-@media screen and (max-width: @size-md) {
+@media screen and (max-width: 1020px) {
   :host {
     overflow: hidden;
     max-height: 3rem;
@@ -137,6 +148,19 @@ ul li.active {
   }
   :host.open {
     max-height: 15.4rem;
+  }
+
+  ul.language-select {
+    position: absolute;
+    right: 1rem;
+    width: auto;
+    display: flex;
+    li {
+      border-bottom: none;
+      text-decoration: none;
+      width: auto;
+      margin-left: 0;
+    }
   }
 
   ul {
