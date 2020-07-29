@@ -18,7 +18,7 @@ function validateEmail(email: string) {
 
 @Component({
   selector: "app-contact-form",
-  templateUrl: "./contact-form.component.html",
+  templateUrl: "./contact-form.component.de.html",
   styleUrls: ["./contact-form.component.less"]
 })
 export class ContactFormComponent implements OnInit, AfterViewInit {
