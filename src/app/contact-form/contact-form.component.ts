@@ -89,18 +89,28 @@ export class ContactFormComponent implements OnInit, AfterViewInit {
       .subscribe(
         response => {
           console.log("success", response)
+          /* this.notification.open( */
+          /*   true, */
+          /*   "Success!", */
+          /*   "Thanks for getting in touch. I will get back to you as soon as possible." */
+          /* ) */
           this.notification.open(
             true,
-            "Success!",
-            "Thanks for getting in touch. I will get back to you as soon as possible."
+            "Ihre Nachricht wurde erfolgreich versendet!",
+            "Danke für Ihr Interesse. Ich werde mich so bald wie möglich persönlich an Sie wenden."
           )
         },
         error => {
           console.error(error)
+          /* this.notification.open( */
+          /*   false, */
+          /*   "Oops something went wrong!", */
+          /*   "please try again later..." */
+          /* ) */
           this.notification.open(
             false,
-            "Oops something went wrong!",
-            "please try again later..."
+            "Etwas ist schief gelaufen...",
+            "Bitte versuchen Sie es später nochmal."
           )
         }
       )
