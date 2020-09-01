@@ -6,6 +6,8 @@ import {
   ViewChildren,
   QueryList,
   ViewChild,
+  ElementRef,
+  AfterContentInit,
 } from "@angular/core";
 import {DomSanitizer} from "@angular/platform-browser"
 import {SectionDirective} from "./section.directive"
@@ -15,11 +17,11 @@ const size_md = 920
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.de.html",
+  templateUrl: "./app.component.html",
   styleUrls: ["./app.component.less"],
 })
-export class AppComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer) {}
+export class AppComponent implements OnInit, AfterContentInit {
+  constructor(private sanitizer: DomSanitizer, private el: ElementRef<HTMLDivElement>) {}
   get tailorImageFilter() {
     return this.sanitizer.bypassSecurityTrustStyle(
       `grayscale(${this.tailorTextVR}) ` +
@@ -38,6 +40,31 @@ export class AppComponent implements OnInit {
       `grayscale(${this.acoustics1TextVR * 0.75}) ` +
       `brightness(${1 - this.acoustics1TextVR * 0.4})`
     )
+  }
+  public aestheticsScrollAnchorBottom = '0px';
+  calcAeatheticsScrollAnchorBottom() {
+    let el = this.el.nativeElement
+    let aes = el.querySelector('#aesthetics-1')
+    let container = aes.querySelector('.text-container')
+    let text = aes.querySelector('.left')
+    let containerHeight = container.getBoundingClientRect().height
+    let textHeight = text.getBoundingClientRect().height
+    let winHeight = window.innerHeight
+    this.aestheticsScrollAnchorBottom =
+      `${containerHeight * 0.08 + textHeight + winHeight * 0.5}px`
+  }
+  public contactTransform = 'scale(1)';
+  calcContactTransform() {
+    let w = window.innerWidth
+    let scale: number
+    if (w >= 1200) {
+      scale = 1200.0 / w;
+    }
+    else {
+      scale = 1;
+    }
+    this.contactTransform = `scale(${scale})`
+    console.log(w, this.contactTransform)
   }
 
   @HostBinding("class.md")
@@ -77,6 +104,11 @@ export class AppComponent implements OnInit {
     }, 5600)
   }
 
+  ngAfterContentInit() {
+    this.calcAeatheticsScrollAnchorBottom()
+    this.calcContactTransform()
+  }
+
   imagesLoadProgress(event: any) {
     this.loadingProgress = event
   }
@@ -107,12 +139,15 @@ export class AppComponent implements OnInit {
 
   @HostListener("window:resize")
   windowResized() {
+    console.log('window resized')
     let w = window.innerWidth
     if (w <= size_md) {
       this.windowSize = "md"
     } else {
       this.windowSize = "lg"
     }
+    this.calcAeatheticsScrollAnchorBottom()
+    this.calcContactTransform()
   }
 
   toggleImprint() {

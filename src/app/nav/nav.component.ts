@@ -3,62 +3,62 @@ import {SectionsService} from "../sections.service";
 
 const EasingFunctions = {
   // no easing, no acceleration
-  linear: function (t: any) {
+  linear: function (t: number) {
     return t;
   },
   // accelerating from zero velocity
-  easeInQuad: function (t: any) {
+  easeInQuad: function (t: number) {
     return t * t;
   },
   // decelerating to zero velocity
-  easeOutQuad: function (t: any) {
+  easeOutQuad: function (t: number) {
     return t * (2 - t);
   },
   // acceleration until halfway, then deceleration
-  easeInOutQuad: function (t: any) {
+  easeInOutQuad: function (t: number) {
     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   },
   // accelerating from zero velocity
-  easeInCubic: function (t: any) {
+  easeInCubic: function (t: number) {
     return t * t * t;
   },
   // decelerating to zero velocity
-  easeOutCubic: function (t: any) {
+  easeOutCubic: function (t: number) {
     return --t * t * t + 1;
   },
   // acceleration until halfway, then deceleration
-  easeInOutCubic: function (t: any) {
+  easeInOutCubic: function (t: number) {
     return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
   },
   // accelerating from zero velocity
-  easeInQuart: function (t: any) {
+  easeInQuart: function (t: number) {
     return t * t * t * t;
   },
   // decelerating to zero velocity
-  easeOutQuart: function (t: any) {
+  easeOutQuart: function (t: number) {
     return 1 - --t * t * t * t;
   },
   // acceleration until halfway, then deceleration
-  easeInOutQuart: function (t: any) {
+  easeInOutQuart: function (t: number) {
     return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
   },
   // accelerating from zero velocity
-  easeInQuint: function (t: any) {
+  easeInQuint: function (t: number) {
     return t * t * t * t * t;
   },
   // decelerating to zero velocity
-  easeOutQuint: function (t: any) {
+  easeOutQuint: function (t: number) {
     return 1 + --t * t * t * t * t;
   },
   // acceleration until halfway, then deceleration
-  easeInOutQuint: function (t: any) {
+  easeInOutQuint: function (t: number) {
     return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
   }
 };
 
 @Component({
   selector: "app-nav",
-  templateUrl: "./nav.component.de.html",
+  templateUrl: "./nav.component.html",
   styleUrls: ["./nav.component.less"]
 })
 export class NavComponent implements OnInit {
@@ -88,7 +88,7 @@ export class NavComponent implements OnInit {
     this.open = !this.open;
   }
 
-  goToSection(sectionId) {
+  goToSection(sectionId: string) {
     let begin = window.scrollY;
     let section = document.getElementById(sectionId);
     let anchor: HTMLDivElement = section.querySelector(".scroll-anchor");
@@ -105,7 +105,7 @@ export class NavComponent implements OnInit {
     // console.log(section, this.data.scrollY, scrollTarget);
 
     let t0 = new Date().getTime();
-    let t;
+    let t: number;
     let update = () => {
       t = new Date().getTime();
       // console.log(
@@ -127,9 +127,7 @@ export class NavComponent implements OnInit {
     window.requestAnimationFrame(update);
   }
 
-  data: {
-    scrollY: number;
-  } = {
-      scrollY: 0
-    };
+  data = {
+    scrollY: 0
+  };
 }
