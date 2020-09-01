@@ -41,11 +41,14 @@
 
     <div id="aesthetics-1">
       <div class="text-container relative">
-        <div class="scroll-anchor"></div>
+        <div
+          class="scroll-anchor"
+          [style.botom]="aestheticsScrollAnchorBottom"
+        ></div>
         <div class="left padding-left text-right center">
           <h3 id="aesthetics-1">
             „Ich habe schon immer von einem Lautsprecher geträumt, der sinnliche
-            Ästhetik und revolutionäre Klangtechno- logie miteinander vereint –
+            Ästhetik und revolutionäre Klangtechnologie miteinander vereint –
             doch ich konnte ihn einfach nicht finden. Also beschloss ich, ihn
             selbst zu designen.“<br />
           </h3>
@@ -86,8 +89,7 @@
           <p>
             Sein absoluter Blick für das Wesentliche und die leiden- schaftliche
             Vision einer besseren Welt kreieren eine unvergleichlich präzise
-            Kombination aus zeit- loser Eleganz und meisterhafter
-            Handwerkskunst.
+            Kombination aus zeitloser Eleganz und meisterhafter Handwerkskunst.
           </p>
         </div>
         <div style="overflow: hidden; width: 100%;">
@@ -170,7 +172,7 @@
           </h1>
           <p>
             Für Perfektionisten wie Thilo Baum baut die legendäre Manufaktur
-            ME-Geithain mehr als nur Laut- sprecher. Sie verkörpern etwas
+            ME-Geithain mehr als nur Lautsprecher. Sie verkörpern etwas
             Magisches. Unver- gleichlich in ihrer akustischen Echtheit scheinen
             sie die Grenzen der Physik zu überwinden. Dabei ist jeder
             Lautsprecher ein absolut identisch handgefertigtes Meisterwerk der
@@ -357,6 +359,7 @@
     </div>
 
     <div class="text-container relative">
+      <div class="scroll-anchor"></div>
       <div
         class="left padding-left text-left align-bottom"
         scrollFx
@@ -403,7 +406,11 @@
     </div>
     <div class="spacer"></div>
     <div class="spacer"></div>
-    <div class="columns" style="transform: scale(0.85);">
+    <div
+      class="columns"
+      [style.transform]="contactTransform"
+      style="transform-origin: top;"
+    >
       <div class="left">
         <div class="relative" style="height: 100%;">
           <img src="assets/contact.jpg" class="center" />
