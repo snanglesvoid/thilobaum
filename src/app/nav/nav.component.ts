@@ -58,7 +58,7 @@ const EasingFunctions = {
 
 @Component({
   selector: "app-nav",
-  templateUrl: "./nav.component.html",
+  templateUrl: "./nav.component.de.html",
   styleUrls: ["./nav.component.less"]
 })
 export class NavComponent implements OnInit {
