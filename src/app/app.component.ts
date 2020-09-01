@@ -17,7 +17,7 @@ const size_md = 920
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.html",
+  templateUrl: "./app.component.de.html",
   styleUrls: ["./app.component.less"],
 })
 export class AppComponent implements OnInit, AfterContentInit {
