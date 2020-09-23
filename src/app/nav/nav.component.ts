@@ -58,7 +58,7 @@ const EasingFunctions = {
 
 @Component({
   selector: "app-nav",
-  templateUrl: "./nav.component.html",
+  templateUrl: "./nav.component.de.html",
   styleUrls: ["./nav.component.less"]
 })
 export class NavComponent implements OnInit {
@@ -108,12 +108,6 @@ export class NavComponent implements OnInit {
     let t: number;
     let update = () => {
       t = new Date().getTime();
-      // console.log(
-      //   "update, timedelta:",
-      //   t - t0,
-      //   ", delta:",
-      //   EasingFunctions.easeInOutQuad((t - t0) / scrollTime)
-      // );
       if (t - t0 >= scrollTime) {
         window.scrollTo(0, scrollTarget);
       } else {
