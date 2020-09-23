@@ -14,11 +14,23 @@
     <a (click)="toggleNav()" (click)="goToSection('acoustics')">Akustik</a>
   </li>
   <li [class.active]="sections.activeSection == 'tailor-made'">
-    Individualität
+    <span class="between"></span>
+    <a (click)="toggleNav()" (click)="goToSection('tailor-made')">
+      Individualität
+    </a>
   </li>
   <li [class.active]="sections.activeSection == 'contact'">
     <span class="between">|</span>
     <a (click)="toggleNav()" (click)="goToSection('contact')">Kontakt</a>
+  </li>
+</ul>
+
+<ul class="language-select">
+  <li class="active">
+    <a href="/">De</a>
+  </li>
+  <li>
+    <a href="/en">En</a>
   </li>
 </ul>
 
