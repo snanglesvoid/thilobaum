@@ -234,7 +234,7 @@ img.logo-wrap {
   margin-bottom: 2vw;
   margin-left: 50%;
   transform: translateX(-50%);
-  filter: grayscale(100%) invert(100%) contrast(5000); 
+  filter: grayscale(100%) invert(100%) contrast(5000);
 }
 
 @media screen and (max-width: @size-md) {
@@ -297,21 +297,21 @@ img.logo-wrap {
 
 @media screen and (max-width: @size-md) {
   h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 100;
     text-transform: uppercase;
   }
 
   h3 {
     font-weight: 100;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.4;
   }
 
   p,
   span {
     line-height: 1.5;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -330,6 +330,12 @@ img.logo-wrap {
 
 @media screen and (max-width: @size-md) {
   .mobile-hide {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 921px) {
+  .mobile-only {
     display: none !important;
   }
 }

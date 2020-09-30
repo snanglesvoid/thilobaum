@@ -73,7 +73,9 @@
       </div>
       <div class="sticky-placeholder"></div>
     </div>
-    <div class="spacer"></div>
+
+    <div class="spacer mobile-big"></div>
+
     <div id="aesthetics-2">
       <div class="columns">
         <div class="relative text-left padding-left">
@@ -82,13 +84,13 @@
             IS CONSISTENT–<br />
             <strong>THILO BAUM</strong>
           </h1>
-          <p>
+          <p class="mobile-hide">
             As a German born and raised Arts & Crafts designer Thilo Baum’s
             holistic approach already captivated the top creatives of several
             influential automotive brands like Bugatti, Mercedes-Benz or
             Porsche.
           </p>
-          <p>
+          <p class="mobile-hide">
             His absolute focus on what is truly essential and his passionate
             vision for a better world are creating an unrivaled precise
             combination of timeless elegance and masterful craftsmanship
@@ -109,6 +111,19 @@
             />
             <div class="fade"></div>
           </picture>
+        </div>
+        <div class="mobile-only relative text-left padding-left">
+          <p>
+            As a German born and raised Arts & Crafts designer Thilo Baum’s
+            holistic approach already captivated the top creatives of several
+            influential automotive brands like Bugatti, Mercedes-Benz or
+            Porsche.
+          </p>
+          <p>
+            His absolute focus on what is truly essential and his passionate
+            vision for a better world are creating an unrivaled precise
+            combination of timeless elegance and masterful craftsmanship
+          </p>
         </div>
       </div>
     </div>
@@ -186,18 +201,26 @@
       </div>
       <div class="right sticky relative">
         <div class="img-container">
-          <img
-            src="assets/speakerTransparent.png"
-            [style.filter]="acoustics1ImageFilter"
-          />
+          <picture>
+            <source
+              media="(min-width: 2048px)"
+              srcset="assets/acoustics1_1k.jpg"
+            />
+            <img
+              src="assets/acoustics1_2k.jpg"
+              [style.filter]="acoustics1ImageFilter"
+            />
+          </picture>
         </div>
       </div>
       <div class="sticky-placeholder"></div>
       <!-- <div class="fade"></div> -->
     </div>
+
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="spacer"></div>
+
     <div class="columns" id="acoustics-2">
       <div class="left relative background-fade-left-2">
         <div class="text-left padding-left center">
@@ -206,19 +229,19 @@
             EAST GERMANY,<br />
             <strong>BUILT FOR ETERNITY</strong>
           </h1>
-          <p>
+          <p class="mobile-hide">
             Connoisseurs call him the golden ear. Joachim Kiesler started
             developing in 1974 what speaker elitists now trade as nothing less
             than an acoustic revelation.
           </p>
-          <p>
+          <p class="mobile-hide">
             With over half a century of experience the Saxony based company
             ME-Geithain still develops and constructs all of his creations
             modularly on-site – leading to independence from third parties,
             ensuringthat all components deliver unrivaled quality and will be
             available long-term.
           </p>
-          <p>
+          <p class="mobile-hide">
             This uncompromising dedication to sustainable engineering sets
             international standards and makes every ME speaker a true investment
             in the future.
@@ -247,7 +270,27 @@
           </a>
         </div>
       </div>
+      <div class="mobile-only padding-left text-left">
+        <p>
+          Connoisseurs call him the golden ear. Joachim Kiesler started
+          developing in 1974 what speaker elitists now trade as nothing less
+          than an acoustic revelation.
+        </p>
+        <p>
+          With over half a century of experience the Saxony based company
+          ME-Geithain still develops and constructs all of his creations
+          modularly on-site – leading to independence from third parties,
+          ensuringthat all components deliver unrivaled quality and will be
+          available long-term.
+        </p>
+        <p>
+          This uncompromising dedication to sustainable engineering sets
+          international standards and makes every ME speaker a true investment
+          in the future.
+        </p>
+      </div>
     </div>
+
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="spacer"></div>
@@ -311,7 +354,7 @@
       <div class="top">
         <h1>
           THE <strong>K1 LIMITED EDITION</strong>
-          INCORPORATES A 3-WAY- COAXIAL ME-SPEAKER TO ACHIEVE THE HIGHEST DEGREE
+          INCORPORATES A 3-WAY-COAXIAL ME-SPEAKER TO ACHIEVE THE HIGHEST DEGREE
           OF SOUND PRECISION POSSIBLE.
         </h1>
       </div>
