@@ -44,7 +44,7 @@
       <div class="text-container relative">
         <div
           class="scroll-anchor"
-          [style.botom]="aestheticsScrollAnchorBottom"
+          [style.bottom]="aestheticsScrollAnchorBottom"
         ></div>
         <div class="left padding-left text-right center">
           <h3 id="aesthetics-1">
@@ -73,7 +73,9 @@
       </div>
       <div class="sticky-placeholder"></div>
     </div>
-    <div class="spacer"></div>
+
+    <div class="spacer mobile-big"></div>
+
     <div id="aesthetics-2">
       <div class="columns">
         <div class="relative text-left padding-left">
@@ -82,12 +84,12 @@
             IST KONSEQUENT–<br />
             <strong>THILO BAUM</strong>
           </h1>
-          <p>
+          <p class="mobile-hide">
             Als Leipziger Arts and Crafts-Designer begeisterte Thilo Baum mit
             seinem holistischen Ansatz bereits die Top-Kreativen namhafter
             Automobilmarken wie Bugatti, Mercedes-Benz oder Porsche.
           </p>
-          <p>
+          <p class="mobile-hide">
             Sein absoluter Blick für das Wesentliche und die leidenschaftliche
             Vision einer besseren Welt kreieren eine unvergleichlich präzise
             Kombination aus zeitloser Eleganz und meisterhafter Handwerkskunst.
@@ -109,9 +111,23 @@
             <div class="fade"></div>
           </picture>
         </div>
+        <div class="mobile-only relative text-left padding-left">
+          <p>
+            Als Leipziger Arts and Crafts-Designer begeisterte Thilo Baum mit
+            seinem holistischen Ansatz bereits die Top-Kreativen namhafter
+            Automobilmarken wie Bugatti, Mercedes-Benz oder Porsche.
+          </p>
+          <p>
+            Sein absoluter Blick für das Wesentliche und die leidenschaftliche
+            Vision einer besseren Welt kreieren eine unvergleichlich präzise
+            Kombination aus zeitloser Eleganz und meisterhafter Handwerkskunst.
+          </p>
+        </div>
       </div>
     </div>
+
     <div class="spacer"></div>
+
     <div id="aesthetics-3">
       <div class="columns background-fade-bottom-light">
         <div class="left relative">
@@ -188,18 +204,26 @@
       </div>
       <div class="right sticky relative">
         <div class="img-container">
-          <img
-            src="assets/speakerTransparent.png"
-            [style.filter]="acoustics1ImageFilter"
-          />
+          <picture>
+            <source
+              media="(min-width: 2048px)"
+              srcset="assets/acoustics1_1k.jpg"
+            />
+            <img
+              src="assets/acoustics1_2k.jpg"
+              [style.filter]="acoustics1ImageFilter"
+            />
+          </picture>
         </div>
       </div>
       <div class="sticky-placeholder"></div>
       <!-- <div class="fade"></div> -->
     </div>
+
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="spacer"></div>
+
     <div class="columns" id="acoustics-2">
       <div class="left relative background-fade-left-2">
         <div class="text-left padding-left center">
@@ -209,18 +233,18 @@
             <strong>GEBAUT FÜR DIE EWIGKEIT.</strong>
           </h1>
 
-          <p>
+          <p class="mobile-hide">
             Kenner nennen ihn das goldene Ohr. Joachim Kiesler entwickelte 1974,
             was die Lautsprecherelite heute als akustische Offenbarung handelt.
           </p>
-          <p>
+          <p class="mobile-hide">
             Mit mehr als einem halben Jahrhundert Branchenerfahrung fertigt die
             sächsische Kultfmanufaktur ME-Geithain all seine Kreationen noch
             immer vor Ort. Unabhängig von Dritten sind alle Komponenten von
             unvergleichlicher Qualität und gleichzeitig garantiert dauerhaft
             verfügbar.
           </p>
-          <p>
+          <p class="mobile-hide">
             Diese kompromisslose Hingabe zu nachhaltiger Ingenieurskunst setzt
             weltweit Maßstäbe und macht jeden ME-Lautsprecher zu einer echten
             Investition in die Zukunft.
@@ -249,10 +273,30 @@
           </a>
         </div>
       </div>
+      <div class="mobile-only paddding-left text-left">
+        <p>
+          Kenner nennen ihn das goldene Ohr. Joachim Kiesler entwickelte 1974,
+          was die Lautsprecherelite heute als akustische Offenbarung handelt.
+        </p>
+        <p>
+          Mit mehr als einem halben Jahrhundert Branchenerfahrung fertigt die
+          sächsische Kultfmanufaktur ME-Geithain all seine Kreationen noch immer
+          vor Ort. Unabhängig von Dritten sind alle Komponenten von
+          unvergleichlicher Qualität und gleichzeitig garantiert dauerhaft
+          verfügbar.
+        </p>
+        <p>
+          Diese kompromisslose Hingabe zu nachhaltiger Ingenieurskunst setzt
+          weltweit Maßstäbe und macht jeden ME-Lautsprecher zu einer echten
+          Investition in die Zukunft.
+        </p>
+      </div>
     </div>
+
     <div class="spacer"></div>
     <div class="spacer"></div>
     <div class="spacer"></div>
+
     <div id="acoustics-3" *ngIf="isLg">
       <div class="sticky relative">
         <picture>
@@ -312,7 +356,7 @@
       <div class="top">
         <h1 style="margin-top: 2vw;">
           FÜR KLANGPRÄZISION IN PERFEKTION VERFÜGT DIE
-          <strong>K1 LIMITED EDITION</strong>ÜBER EINEN PASSIVEN 2-WEGE-KOAXIAL
+          <strong>K1 LIMITED EDITION</strong>ÜBER EINEN 3-WEGE-KOAXIAL
           LAUTSPRECHER VON
           <strong>ME-GEITHEIN</strong>
         </h1>
