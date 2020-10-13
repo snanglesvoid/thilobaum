@@ -47,7 +47,7 @@
           [style.bottom]="aestheticsScrollAnchorBottom"
         ></div>
         <div class="left padding-left text-right center">
-          <h3 id="aesthetics-1">
+          <h3>
             “I have always dreamed of a speaker that blends sensual aesthetics
             and revolutionary acoustic technology – but I simply couldn’t find
             it. So I decided to design it myself.”<br />
@@ -65,8 +65,10 @@
             <img
               #image
               src="assets/aesthetics1_1k.jpg"
-              [style.opacity]="hideFoot ? 0 : 1"
+              [class.inview]="!hideFoot"
             />
+            <!-- [style.opacity]="hideFoot ? 0 : 1" -->
+
             <!-- <img #image src="assets/KRU_S1A2233-be_1.jpg" [style.opacity]="hideFoot ? 0 : 1"/> -->
           </picture>
         </div>
@@ -105,14 +107,17 @@
             <img
               #image
               (scrollFx)="hideFoot = $event == 0"
-              ratio=".9"
+              ratio=".7"
               class="fade-in"
               src="assets/aesthetics2_1k.jpg"
             />
             <div class="fade"></div>
           </picture>
         </div>
-        <div class="mobile-only relative text-left padding-left">
+        <div
+          class="mobile-only relative text-left padding-left"
+          style="padding-top: 2rem;"
+        >
           <p>
             As a German born and raised Arts & Crafts designer Thilo Baum’s
             holistic approach already captivated the top creatives of several
@@ -270,7 +275,10 @@
           </a>
         </div>
       </div>
-      <div class="mobile-only padding-left text-left">
+      <div
+        class="mobile-only padding-left text-left"
+        style="padding-top: 2rem;"
+      >
         <p>
           Connoisseurs call him the golden ear. Joachim Kiesler started
           developing in 1974 what speaker elitists now trade as nothing less
@@ -293,7 +301,7 @@
 
     <div class="spacer"></div>
     <div class="spacer"></div>
-    <div class="spacer"></div>
+    <div class="spacer mobile-spacer-big"></div>
     <div id="acoustics-3" *ngIf="isLg">
       <div class="sticky relative">
         <picture>
@@ -386,7 +394,7 @@
     <app-data-sheet [visible]="datasheetVisible"></app-data-sheet>
   </section>
 
-  <div class="spacer"></div>
+  <div class="spacer mobile-spacer-big"></div>
 
   <section class="relative" id="tailor-made" section="tailor-made">
     <div scrollFx class="section-title fade-in" style="margin-top: 12vw;">
@@ -444,19 +452,23 @@
       <h1>Contact</h1>
     </div>
     <div class="spacer"></div>
-    <div class="spacer"></div>
+    <!-- <div class="spacer"></div> -->
     <div
       class="columns"
       [style.transform]="contactTransform"
       style="transform-origin: top;"
     >
+      <!-- <div class="scroll-anchor"></div> -->
       <div class="left">
         <div class="relative" style="height: 100%;">
           <img src="assets/contact.jpg" class="center" />
           <div class="shadow center"></div>
         </div>
       </div>
-      <div class="right text-left padding-right relative">
+      <div
+        class="right text-left padding-right relative scroll-anchor"
+        style="position: relative;"
+      >
         <app-contact-form></app-contact-form>
       </div>
     </div>

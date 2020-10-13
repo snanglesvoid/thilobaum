@@ -53,6 +53,16 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.aestheticsScrollAnchorBottom =
       `${containerHeight * 0.08 + textHeight + winHeight * 0.5}px`
   }
+  public acousticsScrollAnchorBottom = '0px'
+  calcAcousticsScrollAnchorBottom() {
+    let el = this.el.nativeElement
+    let acu = el.querySelector('#acoustics-1')
+    let text = acu.querySelector('.left')
+    let textHeight = text.getBoundingClientRect().height
+    let winHeight = window.innerHeight
+    this.acousticsScrollAnchorBottom =
+      `${textHeight + winHeight * 0.40}px`
+  }
   public contactTransform = 'scale(1)';
   calcContactTransform() {
     let w = window.innerWidth
@@ -98,6 +108,7 @@ export class AppComponent implements OnInit, AfterContentInit {
   @ViewChild(NavComponent, {static: true}) nav: NavComponent
 
   ngOnInit() {
+    ; (window as any).app = this;
     this.windowResized()
     setTimeout(() => {
       this.shouldgoout = true
@@ -147,6 +158,7 @@ export class AppComponent implements OnInit, AfterContentInit {
       this.windowSize = "lg"
     }
     this.calcAeatheticsScrollAnchorBottom()
+    this.calcAcousticsScrollAnchorBottom()
     this.calcContactTransform()
   }
 
