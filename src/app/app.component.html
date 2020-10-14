@@ -11,8 +11,13 @@
       <div class="left">
         <picture>
           <source media="(min-width: 2048px)" srcset="assets/intro_4k.jpg" />
+          <source media="(max-width: 920px)" srcset="assets/intro_mobile.jpg" />
           <!-- <source media="(min-width: 1024px)" srcset="assets/intro_2k.jpg"> -->
-          <img #image src="assets/intro_2k.jpg" />
+          <img
+            #image
+            src="assets/intro_2k.jpg"
+            [style.margin-left]="introMarginLeft"
+          />
         </picture>
       </div>
       <div class="right background-fade-right">
@@ -66,6 +71,7 @@
               #image
               src="assets/aesthetics1_1k.jpg"
               [class.inview]="!hideFoot"
+              [style.margin-left]="aesthetics1MarginLeft"
             />
             <!-- [style.opacity]="hideFoot ? 0 : 1" -->
 
