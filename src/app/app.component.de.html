@@ -47,7 +47,7 @@
           [style.bottom]="aestheticsScrollAnchorBottom"
         ></div>
         <div class="left padding-left text-right center">
-          <h3 id="aesthetics-1">
+          <h3>
             „Ich habe schon immer von einem Lautsprecher geträumt, der sinnliche
             Ästhetik und revolutionäre Klangtechnologie miteinander vereint –
             doch ich konnte ihn einfach nicht finden. Also beschloss ich, ihn
@@ -65,7 +65,7 @@
             <img
               #image
               src="assets/aesthetics1_1k.jpg"
-              [style.opacity]="hideFoot ? 0 : 1"
+              [class.inview]="!hideFoot"
             />
             <!-- <img #image src="assets/KRU_S1A2233-be_1.jpg" [style.opacity]="hideFoot ? 0 : 1"/> -->
           </picture>
@@ -74,7 +74,7 @@
       <div class="sticky-placeholder"></div>
     </div>
 
-    <div class="spacer mobile-big"></div>
+    <div class="spacer mobile-spacer-big"></div>
 
     <div id="aesthetics-2">
       <div class="columns">
@@ -104,14 +104,17 @@
             <img
               #image
               (scrollFx)="hideFoot = $event == 0"
-              ratio=".9"
+              ratio=".7"
               class="fade-in"
               src="assets/aesthetics2_1k.jpg"
             />
             <div class="fade"></div>
           </picture>
         </div>
-        <div class="mobile-only relative text-left padding-left">
+        <div
+          class="mobile-only relative text-left padding-left"
+          style="padding-top: 2rem;"
+        >
           <p>
             Als Leipziger Arts and Crafts-Designer begeisterte Thilo Baum mit
             seinem holistischen Ansatz bereits die Top-Kreativen namhafter
@@ -273,7 +276,10 @@
           </a>
         </div>
       </div>
-      <div class="mobile-only paddding-left text-left">
+      <div
+        class="mobile-only paddding-left text-left"
+        style="padding-top: 2rem;"
+      >
         <p>
           Kenner nennen ihn das goldene Ohr. Joachim Kiesler entwickelte 1974,
           was die Lautsprecherelite heute als akustische Offenbarung handelt.
@@ -295,7 +301,7 @@
 
     <div class="spacer"></div>
     <div class="spacer"></div>
-    <div class="spacer"></div>
+    <div class="mobile-spacer-big"></div>
 
     <div id="acoustics-3" *ngIf="isLg">
       <div class="sticky relative">
@@ -391,7 +397,7 @@
     <app-data-sheet [visible]="datasheetVisible"></app-data-sheet>
   </section>
 
-  <div class="spacer"></div>
+  <div class="spacer mobile-spacer-big"></div>
 
   <section class="relative" id="tailor-made" section="tailor-made">
     <div scrollFx class="section-title fade-in" style="margin-top: 12vw;">
@@ -455,14 +461,17 @@
       [style.transform]="contactTransform"
       style="transform-origin: top;"
     >
-      <div class="scroll-anchor"></div>
+      <!-- <div class="scroll-anchor"></div> -->
       <div class="left">
         <div class="relative" style="height: 100%;">
           <img src="assets/contact.jpg" class="center" />
           <div class="shadow center"></div>
         </div>
       </div>
-      <div class="right text-left padding-right relative">
+      <div
+        class="right text-left padding-right relative scroll-anchor"
+        style="position: relative;"
+      >
         <app-contact-form></app-contact-form>
       </div>
     </div>
