@@ -17,7 +17,7 @@ const size_md = 920
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.de.html",
+  templateUrl: "./app.component.html",
   styleUrls: ["./app.component.less"],
 })
 export class AppComponent implements OnInit, AfterContentInit {
@@ -53,6 +53,30 @@ export class AppComponent implements OnInit, AfterContentInit {
     this.aestheticsScrollAnchorBottom =
       `${containerHeight * 0.08 + textHeight + winHeight * 0.5}px`
   }
+  public acousticsScrollAnchorBottom = '0px'
+  calcAcousticsScrollAnchorBottom() {
+    let el = this.el.nativeElement
+    let acu = el.querySelector('#acoustics-1')
+    let text = acu.querySelector('.left')
+    let textHeight = text.getBoundingClientRect().height
+    let winHeight = window.innerHeight
+    this.acousticsScrollAnchorBottom =
+      `${textHeight + winHeight * 0.40}px`
+  }
+  public introMarginLeft = '50%'
+  calcIntroMarginLeft() {
+    let ratio = window.innerWidth / window.innerHeight
+    if (this.isLg) {
+      this.introMarginLeft = '0'
+    }
+    else if (ratio < 1.0) {
+      let x = .5 + (1 - ratio) * 0.5
+      this.introMarginLeft = `${100 * x}%`
+
+    } else {
+      this.introMarginLeft = '50%'
+    }
+  }
   public contactTransform = 'scale(1)';
   calcContactTransform() {
     let w = window.innerWidth
@@ -65,6 +89,18 @@ export class AppComponent implements OnInit, AfterContentInit {
     }
     this.contactTransform = `scale(${scale})`
     console.log(w, this.contactTransform)
+  }
+  public aesthetics1MarginLeft = '-10%'
+  calcAesthetics1MarginLeft() {
+    let ratio = window.innerWidth / window.innerHeight
+    if (!this.isLg) {
+      this.aesthetics1MarginLeft = '-10%'
+    } else if (ratio < 1) {
+      let x = -.1 - (1 - ratio) * 1.8
+      this.aesthetics1MarginLeft = `${x * 100}%`
+    } else {
+      this.aesthetics1MarginLeft = '-10%'
+    }
   }
 
   @HostBinding("class.md")
@@ -98,6 +134,7 @@ export class AppComponent implements OnInit, AfterContentInit {
   @ViewChild(NavComponent, {static: true}) nav: NavComponent
 
   ngOnInit() {
+    ; (window as any).app = this;
     this.windowResized()
     setTimeout(() => {
       this.shouldgoout = true
@@ -147,7 +184,10 @@ export class AppComponent implements OnInit, AfterContentInit {
       this.windowSize = "lg"
     }
     this.calcAeatheticsScrollAnchorBottom()
+    this.calcAcousticsScrollAnchorBottom()
     this.calcContactTransform()
+    this.calcIntroMarginLeft()
+    this.calcAesthetics1MarginLeft()
   }
 
   toggleImprint() {

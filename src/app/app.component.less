@@ -99,7 +99,6 @@
   border-bottom-width: 4px;
   border-right-width: 4px;
 }
-
 @media screen and (max-width: @size-md) {
   #intro {
     .columns {
@@ -107,11 +106,11 @@
     }
     .left {
       img {
-        margin-top: -67%;
-        margin-left: 67%;
+        margin-top: -3%;
+        // margin-left: 67%;
         width: auto;
         /* margin-bottom: -15%; */
-        height: 130vh;
+        height: 100vh;
         transform: translateX(-50%);
       }
     }
@@ -150,7 +149,8 @@
   // }
 
   .text-container {
-    width: 54%;
+    width: 50%;
+    // width: 54%;
     float: left;
     height: 120vh;
     padding-top: 25vh;
@@ -168,7 +168,8 @@
   .sticky {
     z-index: -1;
     float: right;
-    width: 46%;
+    // width: 46%;
+    width: 50%;
     top: 3rem;
     .img-container {
       // overflow: hidden;
@@ -178,7 +179,8 @@
       margin-left: -10%;
       width: auto;
       height: 120vh;
-      margin-top: -26vh;
+      // margin-top: -26vh;
+      margin-top: -24vh;
       opacity: 0;
       transition: opacity 1500ms ease;
     }
@@ -189,6 +191,15 @@
 
   .sticky-placeholder {
     height: 200vh;
+  }
+}
+@media screen and (min-width: 921px) {
+  #aesthetics-1 {
+    .sticky {
+      .img-container {
+        overflow: hidden;
+      }
+    }
   }
 }
 
@@ -291,9 +302,12 @@
       height: 60vh;
       grid-area: center;
       img {
-        width: 90%;
-        margin-left: 5%;
+        width: auto;
+        height: 100%;
+        top: 0 !important;
+        margin-left: 52.5%;
         margin-top: 1rem;
+        transform: translateX(-50%);
       }
     }
     .top-right {
@@ -345,7 +359,8 @@
       // width: 100%;
       width: auto;
       height: 100vh;
-      margin-left: 10.5%;
+      margin-left: 55.5%;
+      transform: translateX(-50%);
     }
   }
   .sticky-placeholder {
@@ -387,6 +402,7 @@
         width: 300vw;
         height: auto;
         margin-left: -127%;
+        transform: unset;
       }
     }
   }
@@ -401,6 +417,7 @@
     z-index: 3;
   }
   .right {
+    height: 100vh;
     img:not(.brand-logo) {
       // width: 185%;
       // margin-left: -55%;
@@ -408,7 +425,9 @@
       margin-top: -15%;
       height: 110vh;
       width: auto;
-      margin-left: -71%;
+      position: absolute;
+      right: -46%;
+      // margin-left: -71%;
     }
     .brand-logo-container {
       position: absolute;
@@ -430,12 +449,15 @@
       }
     }
     .right {
+      height: unset;
       img:not(.brand-logo) {
         width: 100%;
         margin-left: 0;
         margin-top: 0;
         // width: 185%;
         height: auto;
+        right: unset;
+        position: relative;
       }
       .brand-logo-container {
         bottom: 1rem;
@@ -645,6 +667,7 @@
 }
 
 #footer {
+  background: black;
   .section-title {
     margin-top: 8vw;
   }
