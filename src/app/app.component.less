@@ -351,13 +351,17 @@
     float: right;
     .img-container {
       height: 91vh;
-      overflow: visible;
+      // overflow-x: hidden;
+      // overflow-y: visible;
+      overflow: hidden;
       width: 200%;
       margin-left: -100%;
+      max-width: 100vw;
     }
     img {
       // width: 100%;
       width: auto;
+      // max-width: 100%;
       height: 100vh;
       margin-left: 55.5%;
       transform: translateX(-50%);
@@ -397,6 +401,9 @@
     }
     .sticky {
       top: 10vh;
+      .img-container {
+        height: 120vh;
+      }
       img {
         margin-top: -11%;
         width: 300vw;
@@ -535,6 +542,7 @@
     padding-right: 1rem;
   }
   .middle {
+    overflow: hidden;
     grid-area: center;
     img {
       width: 150%;
